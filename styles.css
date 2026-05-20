@@ -639,15 +639,18 @@ a { color: var(--primary); text-decoration: none; }
   height: 5px;
 }
 
-.candidate-reject-detail {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 2px;
-  line-height: 1.35;
-}
-
 .candidate-card--reject {
   border-left: 3px solid #ef4444;
+}
+
+.candidate-reject-detail {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pipeline-col__body--empty {
