@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Воронка — DevOps Engineer</title>
-  <link rel="stylesheet" href="styles.css?v=align12">
+  <link rel="stylesheet" href="styles.css?v=align19">
 </head>
 <body>
   <div class="mock-nav">
@@ -98,15 +98,12 @@
                     </div>
                   </div>
                   <div class="candidate-card candidate-card--blocked">
+                    <span class="candidate-card__corner-tag candidate-card__corner-tag--busy">Занят до 01.06</span>
                     <div class="candidate-card__row">
                       <div class="avatar avatar--violet">КП</div>
                       <div>
                         <div class="name">Петров К.В.</div>
                         <div class="score"><span class="score-value">72%</span></div>
-                        <span class="label-block">
-                          <svg class="label-block__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                          Занят до 01.06
-                        </span>
                       </div>
                     </div>
                   </div>
@@ -155,16 +152,12 @@
                     </div>
                   </a>
                   <a href="vacancy-card.html" class="candidate-card candidate-card--reject">
+                    <span class="candidate-card__corner-tag candidate-card__corner-tag--reject">Отказ</span>
                     <div class="candidate-card__row">
                       <div class="avatar avatar--amber">ДК</div>
                       <div>
                         <div class="name">Козлов Д.А.</div>
-                        <div class="candidate-card__meta">
-                          <span class="status-pill status-pill--reject status-pill--compact">
-                            <span class="status-dot"></span>Отказ
-                          </span>
-                        </div>
-                        <p class="candidate-reject-detail">12 мая · не&nbsp;подошёл стек</p>
+                        <div class="candidate-stage-time">12 мая · не&nbsp;подошёл стек</div>
                       </div>
                     </div>
                   </a>
@@ -193,7 +186,7 @@
                   <div class="score-ring" style="--score: 91"><span>91%</span></div>
                   <ul>
                     <li>Kubernetes — 4 года</li>
-                    <li>FinTech в стеке</li>
+                    <li>FinTech в&nbsp;стеке</li>
                     <li>CI/CD, Terraform</li>
                   </ul>
                 </div>

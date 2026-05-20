@@ -594,21 +594,58 @@ a { color: var(--primary); text-decoration: none; }
 .candidate-stage-time {
   font-size: 11px;
   color: var(--text-muted);
-  margin-top: 2px;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* Угловой бейдж (как «ЧЕРНОВИК» в карточке заявки), в правом верхнем углу */
+.candidate-card--blocked,
+.candidate-card--reject {
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.candidate-card__corner-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 3px 8px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  border-radius: 0 0 0 8px;
+}
+
+.candidate-card__corner-tag--busy {
+  background: #ea580c;
+  color: #fff;
+}
+
+.candidate-card__corner-tag--reject {
+  background: #dc2626;
+  color: #fff;
+}
+
+.candidate-card--blocked .candidate-card__row,
+.candidate-card--reject .candidate-card__row {
+  padding-top: 12px;
 }
 
 .label-block {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  align-self: flex-start;
-  margin-top: 4px;
   padding: 2px 8px;
   border-radius: 999px;
   font-size: 10px;
   font-weight: 600;
-  background: #fff7ed;
-  color: #c2410c;
+  background: #ffedd5;
+  color: #9a3412;
+  border: 1px solid #fdba74;
   white-space: nowrap;
 }
 
@@ -641,16 +678,7 @@ a { color: var(--primary); text-decoration: none; }
 
 .candidate-card--reject {
   border-left: 3px solid #ef4444;
-}
-
-.candidate-reject-detail {
-  margin: 4px 0 0;
-  font-size: 11px;
-  color: var(--text-muted);
-  line-height: 1.35;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  background: #fffbfb;
 }
 
 .pipeline-col__body--empty {
@@ -666,8 +694,17 @@ a { color: var(--primary); text-decoration: none; }
 }
 
 .candidate-card--blocked {
-  opacity: 0.85;
-  border-style: dashed;
+  background: linear-gradient(135deg, #fff7ed 0%, #fffbeb 55%);
+  border: 1px solid #fed7aa;
+  border-left: 3px solid #f97316;
+  cursor: default;
+}
+
+.candidate-card--blocked:hover {
+  transform: none;
+  border-color: #fed7aa;
+  border-left-color: #f97316;
+  box-shadow: var(--shadow);
 }
 
 .sent-card__reject-detail {
@@ -855,8 +892,8 @@ a { color: var(--primary); text-decoration: none; }
 }
 
 .pipeline-col {
-  flex: 0 0 212px;
-  min-width: 212px;
+  flex: 0 0 228px;
+  min-width: 228px;
   display: flex;
   flex-direction: column;
   background: var(--surface);
