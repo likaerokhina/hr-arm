@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Воронка — DevOps Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="mock-nav">
+    <span class="brand">HR ЛК</span>
+    <a href="index.html">Обзор</a>
+    <a href="dashboard.html">1. Вакансии</a>
+    <a href="vacancy.html" class="active">2. Воронка</a>
+    <a href="resume.html">3. Резюме</a>
+    <span class="tag">Прототип · не финальный UI</span>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark">HR</span>
+        Рекрутер
+      </div>
+      <nav>
+        <a href="dashboard.html" class="active">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Вакансии
+        </a>
+        <a href="#">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Банк резюме
+        </a>
+        <a href="#">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+          Настройки
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div class="topbar__title">
+          <details class="vacancy-switcher">
+            <summary class="vacancy-switcher__trigger">
+              <span class="vacancy-switcher__name">DevOps Engineer</span>
+              <span class="vacancy-switcher__client">СберTech</span>
+              <svg class="icon icon-sm vacancy-switcher__chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <div class="vacancy-switcher__menu">
+              <a href="vacancy.html" class="vacancy-switcher__item is-active">
+                <span class="vacancy-switcher__item-title">DevOps Engineer</span>
+                <span class="vacancy-switcher__item-meta">СберTech · 5 кандидатов</span>
+              </a>
+              <a href="#" class="vacancy-switcher__item">
+                <span class="vacancy-switcher__item-title">Senior Java</span>
+                <span class="vacancy-switcher__item-meta">Альфа-Банк · 3 кандидата</span>
+              </a>
+              <a href="#" class="vacancy-switcher__item">
+                <span class="vacancy-switcher__item-title">QA Automation</span>
+                <span class="vacancy-switcher__item-meta">Тинькофф · 2 кандидата</span>
+              </a>
+            </div>
+          </details>
+          <div class="breadcrumb">FinTech, Kubernetes, 5+ лет</div>
+        </div>
+        <a href="resume.html" class="btn btn-primary">
+          Проверить резюме
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </header>
+
+      <div class="content content--flush">
+        <div class="three-pane three-pane--funnel">
+          <div class="pane pane--pipeline">
+            <div class="pipeline">
+              <div class="pipeline-col pipeline-col--ai">
+                <div class="pipeline-col__head">
+                  <h3>Подобрано AI</h3>
+                  <span class="count-badge">2</span>
+                </div>
+                <div class="pipeline-col__body">
+                  <div class="candidate-card">
+                    <div class="candidate-card__row">
+                      <div class="avatar avatar--blue">АИ</div>
+                      <div>
+                        <div class="name">Иванов А.С.</div>
+                        <div class="score"><span class="score-value">87%</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="candidate-card">
+                    <div class="candidate-card__row">
+                      <div class="avatar avatar--violet">КП</div>
+                      <div>
+                        <div class="name">Петров К.В.</div>
+                        <div class="score"><span class="score-value">72%</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pipeline-col pipeline-col--review">
+                <div class="pipeline-col__head">
+                  <h3>На проверке</h3>
+                  <span class="count-badge">1</span>
+                </div>
+                <div class="pipeline-col__body">
+                  <div class="candidate-card selected">
+                    <div class="candidate-card__row">
+                      <div class="avatar avatar--teal">МС</div>
+                      <div>
+                        <div class="name">Сидоров М.И.</div>
+                        <div class="score"><span class="score-value">91%</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pipeline-col pipeline-col--ready">
+                <div class="pipeline-col__head">
+                  <h3>Готово</h3>
+                  <span class="count-badge">1</span>
+                </div>
+                <div class="pipeline-col__body">
+                  <div class="candidate-card">
+                    <div class="candidate-card__row">
+                      <div class="avatar avatar--amber">ДК</div>
+                      <div>
+                        <div class="name">Козлов Д.А.</div>
+                        <div class="score score--muted">DOCX готов</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pipeline-col pipeline-col--sent">
+                <div class="pipeline-col__head">
+                  <h3>Отправлено</h3>
+                  <span class="count-badge">1</span>
+                </div>
+                <div class="pipeline-col__body">
+                  <div class="candidate-card">
+                    <div class="candidate-card__row">
+                      <div class="avatar avatar--rose">ПН</div>
+                      <div>
+                        <div class="name">Новиков П.Е.</div>
+                        <div class="score score--muted">Ждём ответ</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pane">
+            <div class="pane-header">Кандидат</div>
+            <div class="detail-panel">
+              <div class="detail-header">
+                <div class="avatar avatar--teal avatar--lg">МС</div>
+                <div>
+                  <h2>Сидоров Михаил</h2>
+                  <div class="role">DevOps / SRE · 6 лет</div>
+                </div>
+              </div>
+
+              <div class="score-block">
+                <span class="badge badge-ai">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg>
+                  AI-подбор
+                </span>
+                <div class="score-block__top">
+                  <div class="score-ring" style="--score: 91"><span>91%</span></div>
+                  <ul>
+                    <li>Kubernetes — 4 года</li>
+                    <li>FinTech в стеке</li>
+                    <li>CI/CD, Terraform</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="detail-note">
+                Резюме адаптировано под вакансию. Проверка рекрутера ~2 мин.
+              </p>
+
+              <div class="actions">
+                <a href="resume.html" class="btn btn-primary">Проверить резюме</a>
+                <a href="#" class="btn btn-secondary">Скачать DOCX</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

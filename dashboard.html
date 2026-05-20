@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вакансии — HR ЛК</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="mock-nav">
+    <span class="brand">HR ЛК</span>
+    <a href="index.html">Обзор</a>
+    <a href="dashboard.html" class="active">1. Вакансии</a>
+    <a href="vacancy.html">2. Воронка</a>
+    <a href="resume.html">3. Резюме</a>
+    <span class="tag">Прототип · не финальный UI</span>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark">HR</span>
+        Рекрутер
+      </div>
+      <nav>
+        <a href="dashboard.html" class="active">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Вакансии
+        </a>
+        <a href="#">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Банк резюме
+        </a>
+        <a href="#">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+          Настройки
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div>
+          <h1>Вакансии</h1>
+          <div class="breadcrumb">Главная / Вакансии</div>
+        </div>
+        <a href="#" class="btn btn-primary">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          Новая вакансия
+        </a>
+      </header>
+
+      <div class="content">
+        <div class="kpi-row">
+          <div class="kpi-card kpi-card--default">
+            <div class="kpi-card__icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="2" y="8" width="20" height="12" rx="2"/></svg>
+            </div>
+            <div class="kpi-card__body">
+              <div class="label">Открытых вакансий</div>
+              <div class="value">12</div>
+              <div class="hint">от B2B-заказчиков</div>
+            </div>
+          </div>
+          <div class="kpi-card kpi-card--alert">
+            <div class="kpi-card__icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <div class="kpi-card__body">
+              <div class="label">Ждут проверки</div>
+              <div class="value">8</div>
+              <div class="hint">резюме от AI</div>
+            </div>
+          </div>
+          <div class="kpi-card kpi-card--success">
+            <div class="kpi-card__icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="kpi-card__body">
+              <div class="label">Отправлено сегодня</div>
+              <div class="value">5</div>
+              <div class="hint">заказчикам</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vacancy-list">
+          <a href="vacancy.html" class="vacancy-row">
+            <div class="vacancy-row__main">
+              <div class="title">DevOps Engineer</div>
+              <div class="tags">FinTech, Kubernetes</div>
+            </div>
+            <div class="vacancy-row__client">СберTech</div>
+            <span class="status-pill status-pill--review"><span class="status-dot"></span>На проверке</span>
+            <div class="vacancy-row__meta">5 подобрано</div>
+            <span class="btn btn-secondary btn-sm">Открыть</span>
+          </a>
+          <a href="vacancy.html" class="vacancy-row">
+            <div class="vacancy-row__main">
+              <div class="title">Senior Java Developer</div>
+              <div class="tags">Spring, микросервисы</div>
+            </div>
+            <div class="vacancy-row__client">Альфа-Банк</div>
+            <span class="status-pill status-pill--open"><span class="status-dot"></span>В работе</span>
+            <div class="vacancy-row__meta">3 подобрано</div>
+            <span class="btn btn-secondary btn-sm">Открыть</span>
+          </a>
+          <a href="vacancy.html" class="vacancy-row">
+            <div class="vacancy-row__main">
+              <div class="title">QA Automation</div>
+              <div class="tags">Python, Selenium</div>
+            </div>
+            <div class="vacancy-row__client">Тинькофф</div>
+            <span class="status-pill status-pill--sent"><span class="status-dot"></span>Отправлено</span>
+            <div class="vacancy-row__meta">2 отправлено</div>
+            <span class="btn btn-secondary btn-sm">Открыть</span>
+          </a>
+          <a href="vacancy.html" class="vacancy-row">
+            <div class="vacancy-row__main">
+              <div class="title">System Analyst</div>
+              <div class="tags">BPMN, SQL</div>
+            </div>
+            <div class="vacancy-row__client">Газпромнефть</div>
+            <span class="status-pill status-pill--open"><span class="status-dot"></span>В работе</span>
+            <div class="vacancy-row__meta">подбор...</div>
+            <span class="btn btn-secondary btn-sm">Открыть</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
