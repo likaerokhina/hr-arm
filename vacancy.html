@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Воронка — DevOps Engineer</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=align12">
 </head>
 <body>
   <div class="mock-nav">
@@ -12,6 +12,7 @@
     <a href="dashboard.html">1. Вакансии</a>
     <a href="vacancy.html" class="active">2. Воронка</a>
     <a href="resume.html">3. Резюме</a>
+    <a href="vacancy-card.html">4. История и статусы</a>
     <span class="tag">Прототип · не финальный UI</span>
   </div>
 
@@ -64,16 +65,17 @@
           <div class="breadcrumb">FinTech, Kubernetes, 5+ лет</div>
         </div>
         <div class="topbar__actions">
-          <a href="vacancy-card.html" class="btn btn-secondary">
-            <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            История и отправки
-          </a>
           <a href="resume.html" class="btn btn-primary">
             Проверить резюме
             <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </header>
+
+      <nav class="vacancy-tabs" aria-label="Раздел вакансии">
+        <a href="vacancy.html" class="vacancy-tabs__item active">Воронка</a>
+        <a href="vacancy-card.html" class="vacancy-tabs__item">История и отправки</a>
+      </nav>
 
       <div class="content content--flush">
         <div class="three-pane three-pane--funnel">
@@ -91,15 +93,20 @@
                       <div>
                         <div class="name">Иванов А.С.</div>
                         <div class="score"><span class="score-value">87%</span></div>
+                        <div class="candidate-stage-time">2 дн. на стадии</div>
                       </div>
                     </div>
                   </div>
-                  <div class="candidate-card">
+                  <div class="candidate-card candidate-card--blocked">
                     <div class="candidate-card__row">
                       <div class="avatar avatar--violet">КП</div>
                       <div>
                         <div class="name">Петров К.В.</div>
                         <div class="score"><span class="score-value">72%</span></div>
+                        <span class="label-block">
+                          <svg class="label-block__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                          Занят до 01.06
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -117,6 +124,7 @@
                       <div>
                         <div class="name">Сидоров М.И.</div>
                         <div class="score"><span class="score-value">91%</span></div>
+                        <div class="candidate-stage-time">5 дн. на стадии</div>
                       </div>
                     </div>
                   </div>
@@ -125,35 +133,41 @@
               <div class="pipeline-col pipeline-col--ready">
                 <div class="pipeline-col__head">
                   <h3>Готово</h3>
-                  <span class="count-badge">1</span>
+                  <span class="count-badge">0</span>
                 </div>
-                <div class="pipeline-col__body">
-                  <div class="candidate-card">
-                    <div class="candidate-card__row">
-                      <div class="avatar avatar--amber">ДК</div>
-                      <div>
-                        <div class="name">Козлов Д.А.</div>
-                        <div class="score score--muted">DOCX готов</div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="pipeline-col__body pipeline-col__body--empty">
+                  <span class="pipeline-empty">Нет кандидатов</span>
                 </div>
               </div>
               <div class="pipeline-col pipeline-col--sent">
                 <div class="pipeline-col__head">
                   <h3>Отправлено</h3>
-                  <span class="count-badge">1</span>
+                  <span class="count-badge">2</span>
                 </div>
                 <div class="pipeline-col__body">
-                  <div class="candidate-card">
+                  <a href="vacancy-card.html" class="candidate-card">
                     <div class="candidate-card__row">
                       <div class="avatar avatar--rose">ПН</div>
                       <div>
                         <div class="name">Новиков П.Е.</div>
-                        <div class="score score--muted">Ждём ответ</div>
+                        <div class="score score--muted">Ждём ответ 4 дн.</div>
                       </div>
                     </div>
-                  </div>
+                  </a>
+                  <a href="vacancy-card.html" class="candidate-card candidate-card--reject">
+                    <div class="candidate-card__row">
+                      <div class="avatar avatar--amber">ДК</div>
+                      <div>
+                        <div class="name">Козлов Д.А.</div>
+                        <div class="candidate-card__meta">
+                          <span class="status-pill status-pill--reject status-pill--compact">
+                            <span class="status-dot"></span>Отказ
+                          </span>
+                        </div>
+                        <div class="candidate-reject-detail">12 мая · не подошёл стек</div>
+                      </div>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -185,8 +199,20 @@
                 </div>
               </div>
 
-              <p class="detail-note">
-                Резюме адаптировано под вакансию. Проверка рекрутера ~2 мин.
+              <div class="mini-activity">
+                <div class="mini-activity__head">
+                  <h3>Последние шаги</h3>
+                  <a href="vacancy-card.html" class="mini-activity__link">Вся история →</a>
+                </div>
+                <ul class="mini-activity__list">
+                  <li><time>10:43</time><span>AI подобрал кандидата</span></li>
+                  <li><time>11:15</time><span>На проверке — открыли «было → стало»</span></li>
+                  <li><time>11:20</time><span>DOCX готов</span></li>
+                </ul>
+              </div>
+
+                            <p class="detail-note">
+                Резюме адаптировано под вакансию.
               </p>
 
               <div class="actions">

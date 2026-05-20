@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Вакансии — HR ЛК</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=align13">
 </head>
 <body>
   <div class="mock-nav">
@@ -12,6 +12,7 @@
     <a href="dashboard.html" class="active">1. Вакансии</a>
     <a href="vacancy.html">2. Воронка</a>
     <a href="resume.html">3. Резюме</a>
+    <a href="vacancy-card.html">4. История и статусы</a>
     <span class="tag">Прототип · не финальный UI</span>
   </div>
 
@@ -84,46 +85,67 @@
         </div>
 
         <div class="vacancy-list">
-          <a href="vacancy.html" class="vacancy-row">
-            <div class="vacancy-row__main">
-              <div class="title">DevOps Engineer</div>
-              <div class="tags">FinTech, Kubernetes</div>
+          <article class="vacancy-card vacancy-card--highlight">
+            <div class="vacancy-card__main">
+              <div class="vacancy-card__title-line">
+                <a href="vacancy.html" class="title">DevOps Engineer</a>
+                <span class="label-stale">Давно без движения</span>
+              </div>
+              <div class="tags">FinTech, Kubernetes · СберTech</div>
             </div>
-            <div class="vacancy-row__client">СберTech</div>
-            <span class="status-pill status-pill--review"><span class="status-dot"></span>На проверке</span>
-            <div class="vacancy-row__meta">5 подобрано · 3 отправлено</div>
-            <span class="btn btn-secondary btn-sm">Открыть</span>
-          </a>
-          <a href="vacancy.html" class="vacancy-row">
-            <div class="vacancy-row__main">
-              <div class="title">Senior Java Developer</div>
-              <div class="tags">Spring, микросервисы</div>
+            <div class="vacancy-card__status">
+              <span class="status-pill status-pill--review"><span class="status-dot"></span>На проверке</span>
             </div>
-            <div class="vacancy-row__client">Альфа-Банк</div>
-            <span class="status-pill status-pill--open"><span class="status-dot"></span>В работе</span>
-            <div class="vacancy-row__meta">3 подобрано</div>
-            <span class="btn btn-secondary btn-sm">Открыть</span>
-          </a>
-          <a href="vacancy.html" class="vacancy-row">
-            <div class="vacancy-row__main">
-              <div class="title">QA Automation</div>
-              <div class="tags">Python, Selenium</div>
+            <div class="vacancy-card__meta">5 подобрано · 3 отправлено</div>
+            <div class="vacancy-card__actions">
+              <a href="vacancy.html" class="btn btn-secondary btn-sm">Воронка</a>
+              <a href="vacancy-card.html" class="btn btn-accent btn-sm">История</a>
             </div>
-            <div class="vacancy-row__client">Тинькофф</div>
-            <span class="status-pill status-pill--sent"><span class="status-dot"></span>Отправлено</span>
-            <div class="vacancy-row__meta">2 отправлено</div>
-            <span class="btn btn-secondary btn-sm">Открыть</span>
-          </a>
-          <a href="vacancy.html" class="vacancy-row">
-            <div class="vacancy-row__main">
-              <div class="title">System Analyst</div>
-              <div class="tags">BPMN, SQL</div>
+          </article>
+          <article class="vacancy-card">
+            <div class="vacancy-card__main">
+              <a href="vacancy.html" class="title">Senior Java Developer</a>
+              <div class="tags">Spring, микросервисы · Альфа-Банк</div>
+              <div class="vacancy-card__timing vacancy-card__timing--muted">1 дн. в статусе</div>
             </div>
-            <div class="vacancy-row__client">Газпромнефть</div>
-            <span class="status-pill status-pill--open"><span class="status-dot"></span>В работе</span>
-            <div class="vacancy-row__meta">подбор...</div>
-            <span class="btn btn-secondary btn-sm">Открыть</span>
-          </a>
+            <div class="vacancy-card__status">
+              <span class="status-pill status-pill--open"><span class="status-dot"></span>В работе</span>
+            </div>
+            <div class="vacancy-card__meta">3 подобрано</div>
+            <div class="vacancy-card__actions">
+              <a href="vacancy.html" class="btn btn-secondary btn-sm">Воронка</a>
+              <a href="vacancy-card.html" class="btn btn-accent btn-sm">История</a>
+            </div>
+          </article>
+          <article class="vacancy-card">
+            <div class="vacancy-card__main">
+              <a href="vacancy.html" class="title">QA Automation</a>
+              <div class="tags">Python, Selenium · Тинькофф</div>
+              <div class="vacancy-card__timing vacancy-card__timing--muted">Ждём ответ 4 дн.</div>
+            </div>
+            <div class="vacancy-card__status">
+              <span class="status-pill status-pill--sent"><span class="status-dot"></span>Отправлено</span>
+            </div>
+            <div class="vacancy-card__meta">2 отправлено</div>
+            <div class="vacancy-card__actions">
+              <a href="vacancy.html" class="btn btn-secondary btn-sm">Воронка</a>
+              <a href="vacancy-card.html" class="btn btn-accent btn-sm">История</a>
+            </div>
+          </article>
+          <article class="vacancy-card">
+            <div class="vacancy-card__main">
+              <a href="vacancy.html" class="title">System Analyst</a>
+              <div class="tags">BPMN, SQL · Газпромнефть</div>
+            </div>
+            <div class="vacancy-card__status">
+              <span class="status-pill status-pill--open"><span class="status-dot"></span>В работе</span>
+            </div>
+            <div class="vacancy-card__meta">подбор...</div>
+            <div class="vacancy-card__actions">
+              <a href="vacancy.html" class="btn btn-secondary btn-sm">Воронка</a>
+              <a href="vacancy-card.html" class="btn btn-accent btn-sm">История</a>
+            </div>
+          </article>
         </div>
       </div>
     </div>
