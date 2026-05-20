@@ -12,7 +12,6 @@
     <a href="dashboard.html">1. Вакансии</a>
     <a href="vacancy.html">2. Воронка</a>
     <a href="resume.html">3. Резюме</a>
-    <a href="vacancy-card.html" class="active">4. История и статусы</a>
     <span class="tag">Прототип · не финальный UI</span>
   </div>
 
@@ -52,13 +51,12 @@
         </div>
         <div class="topbar__actions">
           <span class="status-pill status-pill--review"><span class="status-dot"></span>На проверке</span>
+          <a href="vacancy.html" class="btn btn-secondary">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            К воронке
+          </a>
         </div>
       </header>
-
-      <nav class="vacancy-tabs" aria-label="Раздел вакансии">
-        <a href="vacancy.html" class="vacancy-tabs__item">Воронка</a>
-        <a href="vacancy-card.html" class="vacancy-tabs__item active">История и отправки</a>
-      </nav>
 
       <div class="content content--vacancy-card">
         <div class="vcard-stats">

@@ -1112,37 +1112,6 @@ a.candidate-card {
   gap: 12px;
 }
 
-/* Vacancy sub-nav: Воронка ↔ История */
-.vacancy-tabs {
-  display: flex;
-  gap: 4px;
-  padding: 0 24px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-}
-
-.vacancy-tabs__item {
-  padding: 12px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-  transition: color 0.15s, border-color 0.15s;
-}
-
-.vacancy-tabs__item:hover {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.vacancy-tabs__item.active {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
-}
-
 .vacancy-row--split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
