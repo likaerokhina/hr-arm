@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Вакансии — HR ЛК</title>
-  <link rel="stylesheet" href="styles.css?v=mock1">
+  <link rel="stylesheet" href="styles.css?v=mock2">
 </head>
 <body>
   <div class="mock-nav">
     <span class="brand">HR ЛК</span>
-    <a href="dashboard.html" class="active">1. Вакансии</a>
-    <a href="vacancy.html">2. Воронка</a>
-    <a href="resume.html">3. Резюме</a>
-    <a href="vacancy-card.html">4. История и статусы</a>
+    <a href="dashboard.html" class="active">Вакансии</a>
+    <a href="vacancy.html">Воронка</a>
+    <a href="resume.html">Резюме</a>
+    <a href="vacancy-card.html">История</a>
+    <a href="resume-bank-calendar.html">Банк</a>
+    <div class="mock-nav__scenario">
+      <a href="vacancy-create-1.html">Сценарий →</a>
+    </div>
     <span class="tag">АРМ presale · этап 2</span>
   </div>
 
@@ -27,7 +31,7 @@
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
           Вакансии
         </a>
-        <a href="#" title="Загружается отдельно — предусловие MVP">
+        <a href="resume-bank-calendar.html">
           <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Банк резюме
         </a>
@@ -42,48 +46,66 @@
       <header class="topbar">
         <div>
           <h1>Вакансии</h1>
-          <div class="breadcrumb">Главная / Вакансии</div>
         </div>
-        <button type="button" class="btn btn-primary" data-mock-open="new-vacancy-modal">
+        <a href="vacancy-create-1.html" class="btn btn-primary">
           <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
           Новая вакансия
-        </button>
+        </a>
       </header>
 
-      <div class="content">
-        <div class="queue-banner">
-          <strong>Очередь на сегодня:</strong> 8 резюме ждут проверки · 2 ответа заказчика не проставлены
-        </div>
+      <div class="content content--dashboard">
+        <section class="today-plan" aria-label="План на сегодня">
+          <div class="today-plan__header">
+            <div class="today-plan__title">
+              <div class="today-plan__icon" aria-hidden="true">
+                <svg class="icon icon-lg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+              </div>
+              <div>
+                <h2 class="today-plan__heading">План на сегодня</h2>
+                <p class="today-plan__subtitle" data-mock-plan-subtitle>11 задач до конца дня</p>
+              </div>
+            </div>
+            <time class="today-plan__date" datetime="2026-05-21">21 мая</time>
+          </div>
+          <div class="today-plan__items">
+            <a href="vacancy.html?col=review" class="today-plan__item today-plan__item--review" data-mock-plan-link="review">
+              <span class="today-plan__count" data-mock-plan-count="review">8</span>
+              <span class="today-plan__text">
+                <strong>Резюме на проверку</strong>
+                <span>AI подобрал кандидатов — проверьте перед отправкой</span>
+              </span>
+              <svg class="icon icon-sm today-plan__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+            <a href="vacancy.html?col=sent" class="today-plan__item today-plan__item--response" data-mock-plan-link="response-due">
+              <span class="today-plan__count" data-mock-plan-count="response-due">3</span>
+              <span class="today-plan__text">
+                <strong>Внести ответ заказчика</strong>
+                <span>CV отправлено — отметьте интервью или отказ</span>
+              </span>
+              <svg class="icon icon-sm today-plan__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+          </div>
+        </section>
 
-        <div class="kpi-row kpi-row--4">
+        <div class="kpi-row" data-mock-dashboard-kpi>
           <div class="kpi-card kpi-card--default">
             <div class="kpi-card__icon">
               <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="2" y="8" width="20" height="12" rx="2"/></svg>
             </div>
             <div class="kpi-card__body">
               <div class="label">Открытых вакансий</div>
-              <div class="value">12</div>
-              <div class="hint">от B2B-заказчиков</div>
-            </div>
-          </div>
-          <div class="kpi-card kpi-card--alert">
-            <div class="kpi-card__icon">
-              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            </div>
-            <div class="kpi-card__body">
-              <div class="label">Ждут проверки</div>
-              <div class="value">8</div>
-              <div class="hint">резюме от AI</div>
+              <div class="value" data-mock-kpi="open">10</div>
+              <div class="hint">в работе у рекрутера</div>
             </div>
           </div>
           <div class="kpi-card kpi-card--success">
             <div class="kpi-card__icon">
-              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg>
             </div>
             <div class="kpi-card__body">
               <div class="label">Отправлено сегодня</div>
-              <div class="value">5</div>
-              <div class="hint">заказчикам</div>
+              <div class="value" data-mock-kpi="sentToday">2</div>
+              <div class="hint">CV у заказчиков</div>
             </div>
           </div>
           <div class="kpi-card kpi-card--waiting">
@@ -92,8 +114,8 @@
             </div>
             <div class="kpi-card__body">
               <div class="label">Ждут ответа заказчика</div>
-              <div class="value">3</div>
-              <div class="hint">5 кандидатов</div>
+              <div class="value" data-mock-kpi="waitingVacancies">4</div>
+              <div class="hint" data-mock-kpi-hint="waiting">4 вакансии · 6 кандидатов</div>
             </div>
           </div>
         </div>
@@ -104,12 +126,12 @@
               <span class="list-controls__label">Статус</span>
               <div class="segmented" role="group" aria-label="Фильтр по статусу">
                 <button type="button" class="segmented__btn segmented__btn--active" data-mock-filter-status="all" aria-pressed="true">Все</button>
-                <button type="button" class="segmented__btn" data-mock-filter-status="open" aria-pressed="false">В работе</button>
+                <button type="button" class="segmented__btn" data-mock-filter-status="open" aria-pressed="false">Подбор</button>
                 <button type="button" class="segmented__btn" data-mock-filter-status="review" aria-pressed="false">На проверке</button>
-                <button type="button" class="segmented__btn" data-mock-filter-status="sent" aria-pressed="false">Отправлено</button>
+                <button type="button" class="segmented__btn" data-mock-filter-status="waiting" aria-pressed="false">Ждём ответа</button>
+                <button type="button" class="segmented__btn" data-mock-filter-status="response-due" aria-pressed="false">Проставить ответ</button>
               </div>
             </div>
-
             <div class="list-controls__block">
               <div class="control-shell">
                 <label class="filter-toggle">
@@ -119,9 +141,7 @@
                 </label>
               </div>
             </div>
-
             <div class="list-controls__spacer"></div>
-
             <div class="list-controls__block list-controls__block--sort">
               <div class="control-shell control-shell--sort">
                 <label class="control-shell__icon" for="vacancy-sort" aria-label="Сортировка">
@@ -136,146 +156,14 @@
           </div>
         </div>
 
-        <div class="vacancy-list" data-mock-vacancy-list>
-          <article class="vacancy-card vacancy-card--highlight" data-status="review" data-stale="true">
-            <div class="vacancy-card__main">
-              <div class="vacancy-card__title-line">
-                <a href="vacancy.html" class="title">DevOps Engineer</a>
-                <span class="label-stale">Давно без движения</span>
-                <span class="badge--urgent">Срочно</span>
-              </div>
-              <div class="tags">FinTech, Kubernetes · СберTech</div>
-              <div class="vacancy-card__brief">
-                <span>Старт: ASAP</span>
-                <span>Профили до: 24.05</span>
-              </div>
-              <div class="vacancy-card__timing">3 дн. в статусе · 2 дн. без изменений</div>
-            </div>
-            <div class="vacancy-card__status">
-              <span class="status-pill status-pill--review"><span class="status-dot"></span>На проверке</span>
-            </div>
-            <div class="vacancy-card__meta">5 подобрано · 3 отправлено · <span class="meta-reject">1 отказ</span></div>
-            <div class="vacancy-card__actions">
-              <a href="vacancy.html" class="btn btn-secondary btn-sm">Воронка</a>
-              <a href="vacancy-card.html" class="btn btn-accent btn-sm">История</a>
-            </div>
-          </article>
-          <article class="vacancy-card" data-status="open" data-stale="false">
-            <div class="vacancy-card__main">
-              <a href="vacancy.html" class="title">Senior Java Developer</a>
-              <div class="tags">Spring, микросервисы · Альфа-Банк</div>
-              <div class="vacancy-card__brief">
-                <span>Старт: через 2 нед.</span>
-                <span>Профили до: 28.05</span>
-              </div>
-              <div class="vacancy-card__timing vacancy-card__timing--muted">1 дн. в статусе</div>
-            </div>
-            <div class="vacancy-card__status">
-              <span class="status-pill status-pill--open"><span class="status-dot"></span>В работе</span>
-            </div>
-            <div class="vacancy-card__meta">3 подобрано</div>
-            <div class="vacancy-card__actions">
-              <a href="vacancy.html" class="btn btn-secondary btn-sm">Воронка</a>
-              <a href="vacancy-card.html" class="btn btn-accent btn-sm">История</a>
-            </div>
-          </article>
-          <article class="vacancy-card" data-status="sent" data-stale="true">
-            <div class="vacancy-card__main">
-              <a href="vacancy.html" class="title">QA Automation</a>
-              <div class="tags">Python, Selenium · Тинькофф</div>
-              <div class="vacancy-card__brief">
-                <span>Старт: гибко</span>
-              </div>
-              <div class="vacancy-card__timing vacancy-card__timing--waiting">Ждём ответ 4 дн.</div>
-            </div>
-            <div class="vacancy-card__status">
-              <span class="status-pill status-pill--sent"><span class="status-dot"></span>Отправлено</span>
-            </div>
-            <div class="vacancy-card__meta">2 отправлено</div>
-            <div class="vacancy-card__actions">
-              <a href="vacancy.html" class="btn btn-secondary btn-sm">Воронка</a>
-              <a href="vacancy-card.html" class="btn btn-accent btn-sm">История</a>
-            </div>
-          </article>
-          <article class="vacancy-card" data-status="open" data-stale="false">
-            <div class="vacancy-card__main">
-              <a href="vacancy.html" class="title">System Analyst</a>
-              <div class="tags">BPMN, SQL · Газпромнефть</div>
-              <div class="vacancy-card__brief">
-                <span>Старт: через месяц</span>
-              </div>
-            </div>
-            <div class="vacancy-card__status">
-              <span class="status-pill status-pill--open"><span class="status-dot"></span>В работе</span>
-            </div>
-            <div class="vacancy-card__meta">подбор...</div>
-            <div class="vacancy-card__actions">
-              <a href="vacancy.html" class="btn btn-secondary btn-sm">Воронка</a>
-              <a href="vacancy-card.html" class="btn btn-accent btn-sm">История</a>
-            </div>
-          </article>
-        </div>
+        <div class="vacancy-list" data-mock-vacancy-list-render></div>
 
-        <p class="empty-state-inline hidden" data-mock-vacancy-empty>Нет вакансий по фильтру. Сбросьте фильтры или <button type="button" class="chip chip--active" data-mock-open="new-vacancy-modal">создайте вакансию</button>.</p>
+        <p class="empty-state-inline hidden" data-mock-vacancy-empty>Нет вакансий по фильтру. Сбросьте фильтры или <a href="vacancy-create-1.html">создайте вакансию</a>.</p>
       </div>
     </div>
   </div>
 
-  <div class="modal" id="new-vacancy-modal" aria-hidden="true" role="dialog" aria-labelledby="new-vacancy-title">
-    <div class="modal__overlay" data-mock-close></div>
-    <div class="modal__dialog">
-      <div class="modal__head">
-        <h2 id="new-vacancy-title">Новая вакансия</h2>
-        <p>После создания AI запустит подбор из банка резюме</p>
-      </div>
-      <form class="modal__body" data-mock-new-vacancy-form>
-        <div class="field">
-          <label for="vacancy-text">Текст вакансии</label>
-          <textarea id="vacancy-text" name="vacancy-text" rows="6" placeholder="Вставьте текст заявки от заказчика или опишите требования…"></textarea>
-        </div>
-        <div class="field">
-          <div class="drop-zone">или перетащите DOCX сюда (mock)</div>
-        </div>
-        <div class="modal__foot">
-          <button type="button" class="btn btn-secondary" data-mock-close>Отмена</button>
-          <button type="submit" class="btn btn-primary" data-mock-new-vacancy-submit disabled>Создать</button>
-        </div>
-      </form>
-      <div class="modal__body modal-success hidden" data-mock-new-vacancy-success>
-        <div class="modal-success__hero">
-          <div class="modal-success__check" aria-hidden="true">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <h3 class="modal-success__title">Вакансия создана</h3>
-          <p class="modal-success__lead">AI подбирает кандидатов из банка</p>
-        </div>
-
-        <div class="ai-progress" data-mock-ai-progress aria-live="polite">
-          <div class="ai-progress__bar" aria-hidden="true"></div>
-          <ol class="ai-progress__steps">
-            <li class="ai-progress__step ai-progress__step--active">
-              <span class="ai-progress__label">Анализируем требования</span>
-              <span class="ai-progress__dots" aria-hidden="true"><span></span><span></span><span></span></span>
-            </li>
-            <li class="ai-progress__step">
-              <span class="ai-progress__label">Ищем в банке резюме</span>
-              <span class="ai-progress__dots" aria-hidden="true"><span></span><span></span><span></span></span>
-            </li>
-            <li class="ai-progress__step">
-              <span class="ai-progress__label">Оцениваем совпадение</span>
-              <span class="ai-progress__dots" aria-hidden="true"><span></span><span></span><span></span></span>
-            </li>
-          </ol>
-        </div>
-
-        <div class="modal__foot">
-          <button type="button" class="btn btn-secondary" data-mock-close>Закрыть</button>
-          <a href="vacancy.html" class="btn btn-primary">Открыть воронку</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <script src="mock-data.js"></script>
   <script src="mock.js"></script>
 </body>
 </html>

@@ -3,24 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Воронка — DevOps Engineer</title>
+  <title>Воронка — drawer открыт</title>
   <link rel="stylesheet" href="styles.css?v=mock2">
 </head>
-<body>
-  <div class="mock-nav">
-    <span class="brand">HR ЛК</span>
-    <a href="dashboard.html">Вакансии</a>
-    <a href="vacancy.html" class="active">Воронка</a>
-    <a href="resume.html">Резюме</a>
-    <a href="vacancy-card.html">История</a>
-    <a href="resume-bank-calendar.html">Банк</a>
-    <div class="mock-nav__scenario">
-      <a href="vacancy-funnel-empty.html">← empty</a>
-      <a href="vacancy-drawer-open.html">drawer →</a>
-    </div>
-    <span class="tag">АРМ presale · этап 2</span>
-  </div>
-
+<body class="drawer--open">
+  <div class="mock-nav"><span class="brand">HR ЛК</span><span class="tag">Экспорт · drawer open</span></div>
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-logo">
@@ -42,34 +29,8 @@
         </a>
       </nav>
     </aside>
-
     <div class="main">
-      <header class="topbar">
-        <div class="topbar__title">
-          <details class="vacancy-switcher">
-            <summary class="vacancy-switcher__trigger">
-              <span class="vacancy-switcher__name">DevOps Engineer</span>
-              <span class="vacancy-switcher__client">СберTech</span>
-              <svg class="icon icon-sm vacancy-switcher__chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <div class="vacancy-switcher__menu">
-              <a href="vacancy.html" class="vacancy-switcher__item is-active">
-                <span class="vacancy-switcher__item-title">DevOps Engineer</span>
-                <span class="vacancy-switcher__item-meta">СберTech · 11 кандидатов</span>
-              </a>
-            </div>
-          </details>
-          <div class="breadcrumb">FinTech, Kubernetes, 5+ лет</div>
-          <div class="brief-strip">
-            <span class="brief-strip__item">Senior</span>
-            <span class="brief-strip__item">Full-time</span>
-            <span class="brief-strip__item">CET+4</span>
-            <span class="brief-strip__item">FinTech</span>
-            <span class="brief-strip__item">K8s, Terraform</span>
-          </div>
-        </div>
-      </header>
-
+      <header class="topbar"><div><h1>DevOps Engineer</h1><div class="breadcrumb">СберTech</div></div></header>
       <nav class="vacancy-tabs vacancy-tabs--board" aria-label="Раздел вакансии">
         <div class="vacancy-tabs__nav">
           <a href="vacancy.html" class="vacancy-tabs__item active">Воронка</a>
@@ -77,25 +38,23 @@
         </div>
         <div class="vacancy-tabs__actions" data-mock-funnel-toolbar></div>
       </nav>
-
       <div class="content content--flush funnel-layout">
         <div class="pipeline pipeline--full" data-mock-pipeline-render></div>
       </div>
     </div>
   </div>
-
-  <div class="drawer-overlay" data-mock-drawer-overlay aria-hidden="true"></div>
-  <aside class="drawer" data-mock-drawer aria-hidden="true">
-    <div class="drawer__head">
-      <strong>Кандидат</strong>
-      <button type="button" class="drawer__close" data-mock-drawer-close aria-label="Закрыть">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
+  <div class="drawer-overlay is-open" data-mock-drawer-overlay></div>
+  <aside class="drawer is-open" data-mock-drawer>
+    <div class="drawer__head"><strong>Кандидат</strong></div>
     <div class="drawer__body" data-mock-drawer-content></div>
   </aside>
-
   <script src="mock-data.js"></script>
   <script src="mock.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var card = document.querySelector('[data-candidate="sidorov"]');
+      if (card) card.classList.add('selected');
+    });
+  </script>
 </body>
 </html>

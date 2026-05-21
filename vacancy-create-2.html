@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создание вакансии — шаг 2</title>
+  <link rel="stylesheet" href="styles.css?v=mock2">
+</head>
+<body>
+  <div class="mock-nav">
+    <span class="brand">HR ЛК</span>
+    <a href="dashboard.html">Вакансии</a>
+    <span class="tag">Сценарий · шаг 2/2</span>
+    <div class="mock-nav__scenario"><a href="vacancy-funnel-empty.html">Создать →</a></div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark">HR</span>
+        Рекрутер
+      </div>
+      <nav>
+        <a href="dashboard.html" class="active">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Вакансии
+        </a>
+        <a href="resume-bank-calendar.html">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Банк резюме
+        </a>
+        <a href="#">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+          Настройки
+        </a>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="topbar"><div><h1>Новая вакансия</h1><div class="breadcrumb">Шаг 2 — профиль для подбора</div></div></header>
+      <div class="content content--wizard">
+        <div class="wizard">
+          <nav class="wizard__rail" aria-label="Шаги создания вакансии">
+            <div class="wizard__step is-done">
+              <span class="wizard__step-num">1</span>
+              <span class="wizard__step-label">Загрузка</span>
+            </div>
+            <div class="wizard__connector" aria-hidden="true"></div>
+            <div class="wizard__step is-active">
+              <span class="wizard__step-num">2</span>
+              <span class="wizard__step-label">Профиль и AI</span>
+            </div>
+          </nav>
+          <div class="wizard-panel">
+            <div class="wizard-panel__head">
+              <div class="wizard-panel__title-row">
+                <h2>Профиль для подбора</h2>
+                <span class="badge badge-ai">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg>
+                  Заполнено AI
+                </span>
+              </div>
+              <div class="ai-warning-banner ai-warning-banner--wizard" role="status" aria-live="polite">
+                <svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div>
+                  <strong>Заполнено AI — проверьте перед запуском подбора</strong>
+                  Поля извлечены из заявки. Сверьте роль, стек и сроки — ошибки ухудшат качество подбора из банка.
+                </div>
+              </div>
+            </div>
+            <form class="wizard-grid wizard-grid--ai-filled wizard-panel__body" data-mock-wizard-form>
+              <div class="field field--full">
+                <label for="role">Роль</label>
+                <input type="text" id="role" required value="DevOps Engineer">
+              </div>
+              <div class="field">
+                <label for="grade">Грейд</label>
+                <input type="text" id="grade" required value="Senior">
+              </div>
+              <div class="field">
+                <label for="domain">Домен</label>
+                <input type="text" id="domain" required value="FinTech">
+              </div>
+              <div class="field field--full">
+                <label for="stack">Стек (через запятую)</label>
+                <input type="text" id="stack" required value="Kubernetes, Terraform, Helm, GitLab CI, PCI DSS">
+              </div>
+              <div class="field">
+                <label for="start-from">Готовность специалиста с</label>
+                <input type="date" id="start-from" required value="2026-05-21">
+              </div>
+              <div class="field">
+                <label for="project-until">Срок проекта до</label>
+                <input type="date" id="project-until" required value="2026-12-31">
+              </div>
+              <div class="field field--full">
+                <label for="client">Заказчик</label>
+                <input type="text" id="client" required value="СберTech">
+              </div>
+            </form>
+            <div class="wizard-panel__foot">
+              <div class="wizard-panel__foot-actions">
+                <a href="vacancy-create-1.html" class="btn btn-secondary">Назад</a>
+                <a href="vacancy-funnel-empty.html" class="btn btn-primary">Создать и запустить подбор</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="mock-data.js"></script>
+  <script src="mock.js"></script>
+</body>
+</html>

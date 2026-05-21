@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Банк резюме — календарь</title>
+  <link rel="stylesheet" href="styles.css?v=mock2">
+</head>
+<body>
+  <div class="mock-nav">
+    <span class="brand">HR ЛК</span>
+    <a href="dashboard.html">Вакансии</a>
+    <a href="resume-bank-calendar.html" class="active">Банк</a>
+    <span class="tag">AppSheet-референс</span>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark">HR</span>
+        Рекрутер
+      </div>
+      <nav>
+        <a href="dashboard.html">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Вакансии
+        </a>
+        <a href="resume-bank-calendar.html" class="active">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Банк резюме
+        </a>
+        <a href="#">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+          Настройки
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div>
+          <h1>Банк резюме</h1>
+          <div class="breadcrumb">Занятость специалистов · подбор из банка</div>
+        </div>
+      </header>
+
+      <div class="content content--bank">
+        <div class="kpi-row kpi-row--4 kpi-row--bank" data-mock-bank-kpi-row>
+          <div class="kpi-card kpi-card--default">
+            <div class="kpi-card__icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="kpi-card__body">
+              <div class="label">В банке</div>
+              <div class="value" data-mock-bank-kpi="total">18</div>
+            </div>
+          </div>
+          <div class="kpi-card kpi-card--success">
+            <div class="kpi-card__icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg>
+            </div>
+            <div class="kpi-card__body">
+              <div class="label">Свободны</div>
+              <div class="value" data-mock-bank-kpi="free">7</div>
+            </div>
+          </div>
+          <div class="kpi-card kpi-card--alert">
+            <div class="kpi-card__icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+            <div class="kpi-card__body">
+              <div class="label">Заняты</div>
+              <div class="value" data-mock-bank-kpi="busy">8</div>
+            </div>
+          </div>
+          <div class="kpi-card kpi-card--waiting">
+            <div class="kpi-card__icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="kpi-card__body">
+              <div class="label">Освобождаются в 2 нед.</div>
+              <div class="value" data-mock-bank-kpi="soon">3</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bank-toolbar">
+          <div class="segmented" data-mock-bank-segment>
+            <button type="button" class="segmented__btn segmented__btn--active" data-bank-filter="all">Все</button>
+            <button type="button" class="segmented__btn" data-bank-filter="free">Свободны</button>
+            <button type="button" class="segmented__btn" data-bank-filter="busy">Заняты</button>
+          </div>
+          <div class="control-shell control-shell--search">
+            <span class="control-shell__icon" aria-hidden="true">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </span>
+            <input type="search" class="control-search" placeholder="Поиск по ФИО…" data-mock-bank-search aria-label="Поиск по ФИО">
+          </div>
+          <div class="bank-toolbar__spacer" aria-hidden="true"></div>
+          <div class="view-switcher">
+            <a href="resume-bank-calendar.html" class="active">Календарь</a>
+            <a href="resume-bank.html">Список</a>
+          </div>
+        </div>
+
+        <div class="bank-table-wrap bank-content-area">
+          <table class="bank-table">
+            <thead>
+              <tr>
+                <th>Сотрудник</th>
+                <th>Роль</th>
+                <th>Загр.</th>
+                <th>Свободен</th>
+                <th>Стек</th>
+                <th>28.04–04.05</th>
+                <th>05.05–11.05</th>
+                <th>12.05–18.05</th>
+                <th>19.05–25.05</th>
+                <th>26.05–01.06</th>
+              </tr>
+            </thead>
+            <tbody data-mock-bank-calendar-body></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="mock-data.js"></script>
+  <script src="mock.js"></script>
+</body>
+</html>

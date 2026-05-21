@@ -11,8 +11,13 @@ const chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 const shots = [
   { file: 'dashboard.html', out: 'spisok_vakansiy.png', width: 1280 },
   { file: 'vacancy.html', out: 'voronka.png', width: 1680 },
+  { file: 'vacancy-funnel-empty.html', out: 'voronka_empty.png', width: 1680 },
+  { file: 'vacancy-funnel-loading.html', out: 'voronka_loading.png', width: 1680 },
+  { file: 'vacancy-drawer-open.html', out: 'voronka_drawer.png', width: 1680 },
   { file: 'resume.html', out: 'resume.png', width: 1280 },
   { file: 'vacancy-card.html', out: 'history.png', width: 1280 },
+  { file: 'resume-bank-calendar.html', out: 'bank_calendar.png', width: 1400 },
+  { file: 'resume-bank.html', out: 'bank_list.png', width: 1280 },
 ];
 
 const screenshotCss = `

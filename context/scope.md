@@ -4,9 +4,9 @@
 
 | Входит | Не входит |
 |--------|-----------|
-| 4 экрана: dashboard, vacancy, resume, vacancy-card | Дашборд скамьи |
-| KPI, воронка, % AI, было→стало, DOCX | Обход ATS |
-| Застой, отказы, «занят», «уже отправляли» | AI-агенты, питч AM |
-| Лента событий | Модуль «Банк» (sidebar — заглушка) |
+| Dashboard, воронка, резюме, история, банк | Дашборд скамьи |
+| Journey: создание вакансии, empty/loading воронка | Обход ATS |
+| KPI, drawer, % AI, было→стало, DOCX | AI-агенты, питч AM |
+| Банк: список + календарь (AppSheet) | Эпики в arch (локально без правок) |
 
-Полная карта: [mvp-scope-map.md](../../arch/docs/onboarding/outstaffing/mvp-scope-map.md) в репозитории `arch`.
+Полная карта: [screen-map.md](./screen-map.md).

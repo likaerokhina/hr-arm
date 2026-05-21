@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Адаптация резюме — HR ЛК</title>
-  <link rel="stylesheet" href="styles.css?v=mock1">
+  <link rel="stylesheet" href="styles.css?v=mock3">
 </head>
 <body>
   <div class="mock-nav">
     <span class="brand">HR ЛК</span>
-    <a href="dashboard.html">1. Вакансии</a>
-    <a href="vacancy.html">2. Воронка</a>
-    <a href="resume.html" class="active">3. Резюме</a>
-    <a href="vacancy-card.html">4. История и статусы</a>
+    <a href="dashboard.html">Вакансии</a>
+    <a href="vacancy.html">Воронка</a>
+    <a href="resume.html" class="active">Резюме</a>
+    <a href="vacancy-card.html">История</a>
+    <a href="resume-bank-calendar.html">Банк</a>
     <span class="tag">АРМ presale · этап 2</span>
   </div>
 
@@ -23,12 +24,12 @@
         Рекрутер
       </div>
       <nav>
-        <a href="dashboard.html" class="sidebar-link--muted">
+        <a href="dashboard.html" class="active">
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
           Вакансии
         </a>
-        <a href="#" title="Загружается отдельно — предусловие MVP">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        <a href="resume-bank-calendar.html">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Банк резюме
         </a>
         <a href="#">
@@ -41,119 +42,81 @@
     <div class="main">
       <header class="topbar">
         <div>
-          <h1>Сидоров М. — DevOps Engineer</h1>
+          <h1 data-resume-title>Балакирев М. — Senior QA Engineer Fullstack (Java)</h1>
           <div class="topbar-meta">
-            <span class="breadcrumb">СберTech / Адаптация резюме</span>
-            <span class="topbar-chip">91% совпадения</span>
+            <span class="breadcrumb" data-resume-breadcrumb>Тинькофф / QA Automation · FinTech</span>
+            <span class="topbar-chip" data-resume-chip>88% · 10 из 12 требований</span>
             <a href="vacancy.html" class="mini-activity__link">← К воронке</a>
           </div>
         </div>
       </header>
 
       <div class="content content--resume">
+        <div class="ai-warning-banner" role="status" aria-live="polite">
+          <svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div>
+            <strong>Текст сгенерирован AI — проверьте перед отправкой</strong>
+            Проверьте факты, технологии, релевантный опыт и soft skills. Ошибки AI попадают к заказчику.
+          </div>
+        </div>
+
         <div class="diff-header">
           <div class="diff-meta">
-            <span class="badge badge-ai">
-              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg>
-              AI адаптировал
-            </span>
-            <span style="font-size:13px;color:var(--text-muted)">Совпадение: <strong style="color:var(--ai)">91%</strong></span>
-            <div class="version-tabs" data-mock-version-tabs>
-              <button type="button" class="version-tabs__item active" data-mock-version-tab="v1">v1</button>
-              <button type="button" class="version-tabs__item" data-mock-version-tab="v2">v2</button>
-            </div>
-            <span class="docx-hint docx-hint--meta">Корпоративный шаблон DOCX</span>
-            <span class="version-hint" data-mock-version-hint">v1 — первичная адаптация AI</span>
+            <span class="badge badge-ai">AI адаптировал</span>
+            <span class="docx-hint docx-hint--meta" data-resume-docx-hint>Корпоративный шаблон DOCX · FinTech QA</span>
           </div>
-          <a href="vacancy.html" class="btn btn-secondary btn-sm">
-            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            К воронке
-          </a>
+        </div>
+
+        <div class="diff-legend" aria-label="Обозначения правок">
+          <span class="diff-legend__item diff-legend__item--ins">Добавлено</span>
+          <span class="diff-legend__item diff-legend__item--del">Удалено</span>
+          <span class="diff-legend__item diff-legend__item--mod">Изменено</span>
         </div>
 
         <div class="diff-wrap">
           <div class="diff-grid">
             <div class="diff-col">
-              <h3>
-                <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                Было (из банка)
-              </h3>
-              <div class="diff-box">
-                <p><strong>Опыт работы</strong></p>
-                <p>Senior DevOps Engineer, IT-компания, 2020–2025</p>
-                <p>— Kubernetes, Docker, GitLab CI<br>
-                — Мониторинг: Prometheus, Grafana<br>
-                — Облако: Yandex Cloud</p>
-                <p><strong>Стек:</strong> Linux, Bash, Python, Ansible</p>
-              </div>
+              <h3>Было (из банка)</h3>
+              <div class="diff-box" id="resume-before"></div>
             </div>
-            <div class="diff-col diff-col--after" data-mock-diff-after>
-              <h3>
-                <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg>
-                Стало (под вакансию)
-              </h3>
-              <div class="diff-box after" data-mock-diff-version="v1">
-                <p><strong>Опыт работы</strong></p>
-                <p>Senior DevOps Engineer, IT-компания, 2020–2025</p>
-                <p>— Kubernetes, Docker, GitLab CI<br>
-                — <span class="highlight">FinTech: платёжные шлюзы, PCI DSS</span><br>
-                — Мониторинг: Prometheus, Grafana<br>
-                — Облако: Yandex Cloud, <span class="highlight">Terraform</span></p>
-                <p><strong>Стек:</strong> Linux, Bash, Python, Ansible, <span class="highlight">Helm</span></p>
+            <div class="diff-col diff-col--after">
+              <h3>Стало (под вакансию)</h3>
+              <div class="diff-box after" id="resume-after-box">
+                <div class="diff-box__loader" id="resume-loader" aria-live="polite" aria-busy="false">
+                  <div class="diff-box__loader-spinner"></div>
+                  <span>AI генерирует резюме…</span>
+                </div>
+                <div class="diff-box__body" id="resume-after"></div>
               </div>
-              <div class="diff-box after hidden" data-mock-diff-version="v2">
-                <p><strong>Опыт работы</strong></p>
-                <p>Senior DevOps Engineer, IT-компания, 2020–2025</p>
-                <p>— <span class="highlight">FinTech: платёжные шлюзы, PCI DSS, high-load</span><br>
-                — Kubernetes, Docker, GitLab CI, <span class="highlight">Helm charts</span><br>
-                — Мониторинг: Prometheus, Grafana, alerting<br>
-                — Облако: Yandex Cloud, Terraform, IaC</p>
-                <p><strong>Стек:</strong> Linux, Bash, Python, Ansible, Helm, <span class="highlight">ArgoCD</span></p>
-              </div>
-              <textarea class="diff-edit" data-mock-diff-textarea>Senior DevOps Engineer, IT-компания, 2020–2025
-— Kubernetes, Docker, GitLab CI
-— FinTech: платёжные шлюзы, PCI DSS
-— Мониторинг: Prometheus, Grafana
-— Облако: Yandex Cloud, Terraform
-Стек: Linux, Bash, Python, Ansible, Helm</textarea>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="sticky-actions sticky-actions--with-checklist">
-        <div class="checklist-bar" data-mock-checklist>
-          <label class="checklist-item" data-mock-check-item data-required="true">
-            <input type="checkbox"> Факты проверены
-          </label>
-          <label class="checklist-item" data-mock-check-item data-required="true">
-            <input type="checkbox"> Не отправлялся заказчику
-          </label>
-          <label class="checklist-item checklist-item--optional" data-mock-check-item>
-            <input type="checkbox"> Английский уточнён
-          </label>
-          <label class="checklist-item" data-mock-check-item data-required="true">
-            <input type="checkbox"> Готовность сотрудника
-          </label>
-        </div>
-        <div class="sticky-actions__row">
-          <p class="footer-note">После проверки — отметьте отправку заказчику.</p>
-          <div class="actions">
-          <a href="vacancy-card.html" class="btn btn-primary btn--disabled" data-mock-send-btn aria-disabled="true">
-            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2z"/></svg>
-            Отправлено заказчику →
-          </a>
-          <a href="#" class="btn btn-secondary" data-mock-docx>
-            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Скачать DOCX
-          </a>
-          <button type="button" class="btn btn-secondary" data-mock-edit-resume">Править</button>
+      <div class="sticky-actions sticky-actions--resume">
+        <div class="sticky-actions__row" style="flex-wrap:wrap;gap:16px">
+          <div class="resume-comment-bar">
+            <textarea
+              id="resume-comment"
+              data-resume-comment
+              placeholder="Комментарий по тексту: что поправить, убрать или усилить…"
+              rows="2"
+            ></textarea>
+            <button type="button" class="btn btn-secondary" data-mock-ai-regenerate>
+              <span data-resume-btn-label>Сгенерировать резюме</span>
+            </button>
+          </div>
+          <div class="actions" style="margin-left:auto">
+            <button type="button" class="btn btn-secondary" data-mock-docx-resume>Скачать адаптированный DOCX</button>
+            <button type="button" class="btn btn-primary" data-mock-mark-ready-resume>Отметить готовность →</button>
+            <a href="vacancy-card.html" class="btn btn-accent">Отправить заказчику →</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <script src="mock-data.js"></script>
   <script src="mock.js"></script>
 </body>
 </html>

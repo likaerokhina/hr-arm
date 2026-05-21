@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Карточка вакансии — DevOps Engineer</title>
-  <link rel="stylesheet" href="styles.css?v=mock1">
+  <title>История — DevOps Engineer</title>
+  <link rel="stylesheet" href="styles.css?v=mock2">
 </head>
 <body>
   <div class="mock-nav">
     <span class="brand">HR ЛК</span>
-    <a href="dashboard.html">1. Вакансии</a>
-    <a href="vacancy.html">2. Воронка</a>
-    <a href="resume.html">3. Резюме</a>
-    <a href="vacancy-card.html" class="active">4. История и статусы</a>
+    <a href="dashboard.html">Вакансии</a>
+    <a href="vacancy.html">Воронка</a>
+    <a href="resume.html">Резюме</a>
+    <a href="vacancy-card.html" class="active">История</a>
+    <a href="resume-bank-calendar.html">Банк</a>
     <span class="tag">АРМ presale · этап 2</span>
   </div>
 
@@ -23,12 +24,12 @@
         Рекрутер
       </div>
       <nav>
-        <a href="dashboard.html" class="sidebar-link--muted">
+        <a href="dashboard.html" class="active">
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
           Вакансии
         </a>
-        <a href="#" title="Загружается отдельно — предусловие MVP">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        <a href="resume-bank-calendar.html">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Банк резюме
         </a>
         <a href="#">
@@ -42,10 +43,7 @@
       <header class="topbar">
         <div>
           <div class="breadcrumb breadcrumb--back">
-            <a href="dashboard.html">
-              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-              К списку вакансий
-            </a>
+            <a href="dashboard.html">← К списку вакансий</a>
           </div>
           <h1>DevOps Engineer</h1>
           <div class="breadcrumb">СберTech · FinTech, Kubernetes</div>
@@ -57,205 +55,53 @@
 
       <nav class="vacancy-tabs" aria-label="Раздел вакансии">
         <a href="vacancy.html" class="vacancy-tabs__item">Воронка</a>
-        <a href="vacancy-card.html" class="vacancy-tabs__item active">История и отправки</a>
+        <a href="vacancy-card.html" class="vacancy-tabs__item active">История</a>
       </nav>
 
       <div class="content content--vacancy-card">
-        <div class="vcard-stats">
-          <div class="vcard-stat">
-            <span class="vcard-stat__value">5</span>
-            <span class="vcard-stat__label">подобрано AI</span>
-          </div>
-          <div class="vcard-stat">
-            <span class="vcard-stat__value">2</span>
-            <span class="vcard-stat__label">на проверке</span>
-          </div>
-          <div class="vcard-stat vcard-stat--accent">
-            <span class="vcard-stat__value">3</span>
-            <span class="vcard-stat__label">отправлено</span>
-          </div>
-        </div>
+        <div class="send-stats send-stats--history" data-mock-history-stats></div>
 
-        <div class="vcard-grid">
-          <section class="vcard-panel">
-            <div class="vcard-panel__head">
-              <h2>Отправки и статусы</h2>
-              <span class="vcard-panel__hint">Кто у заказчика и что ответил</span>
-            </div>
-
-            <div class="sent-list">
-              <article class="sent-card sent-card--active" id="novikov">
-                <div class="sent-card__top">
-                  <div class="avatar avatar--rose">ПН</div>
-                  <div class="sent-card__info">
-                    <div class="sent-card__name">Новиков Павел</div>
-                    <div class="sent-card__meta">Отправлено 14:05 · <a href="resume.html">DOCX v1</a></div>
-                  </div>
-                  <span class="status-pill status-pill--waiting"><span class="status-dot"></span>Ждём ответ</span>
-                </div>
-                <p class="sent-card__note">Отправлено заказчику. <strong>Ждём ответ 4 дн.</strong><span class="sla-badge sla-badge--amber">· Напомнить AM</span> Выберите статус, когда придёт ответ.</p>
-                <div class="sent-card__actions">
-                  <button type="button" class="btn btn-primary btn-sm" data-mock-interview>Интервью</button>
-                  <button type="button" class="btn btn-secondary btn-sm" data-mock-open-reject>Отказ</button>
-                  <button type="button" class="btn btn-secondary btn-sm" data-mock-resubmit>Переотправить</button>
-                </div>
-              </article>
-
-              <article class="sent-card">
-                <div class="sent-card__top">
-                  <div class="avatar avatar--teal">МС</div>
-                  <div class="sent-card__info">
-                    <div class="sent-card__name">Сидоров Михаил</div>
-                    <div class="sent-card__meta">Отправлено вчера · <a href="resume.html">DOCX v1</a></div>
-                  </div>
-                  <span class="status-pill status-pill--interview"><span class="status-dot"></span>Интервью</span>
-                </div>
-              </article>
-
-              <article class="sent-card">
-                <div class="sent-card__top">
-                  <div class="avatar avatar--amber">ДК</div>
-                  <div class="sent-card__info">
-                    <div class="sent-card__name">Козлов Дмитрий</div>
-                    <div class="sent-card__meta">Отправлено 12 мая · <a href="resume.html">DOCX v1</a></div>
-                  </div>
-                  <span class="status-pill status-pill--reject"><span class="status-dot"></span>Отказ</span>
-                </div>
-                <p class="sent-card__reject-detail">Заказчик · 12 мая · не подошёл стек</p>
-              </article>
-            </div>
-
-            <div class="vcard-footnote">
-              <a href="resume.html" class="btn btn-secondary btn-sm">Проверить следующего →</a>
-            </div>
-          </section>
-
-          <section class="vcard-panel">
-            <div class="vcard-panel__head">
-              <h2>История вакансии</h2>
-              <span class="vcard-panel__hint">Все события по вакансии</span>
-            </div>
-
-            <div class="timeline-filter">
-              <div class="chip-row" data-mock-timeline-filter>
-                <button type="button" class="chip chip--active" data-mock-timeline-chip="all" aria-pressed="true">Все</button>
-                <button type="button" class="chip" data-mock-timeline-chip="novikov" aria-pressed="false">Новиков</button>
-                <button type="button" class="chip" data-mock-timeline-chip="sidorov" aria-pressed="false">Сидоров</button>
-                <button type="button" class="chip" data-mock-timeline-chip="kozlov" aria-pressed="false">Козлов</button>
+        <div class="list-controls list-controls--history">
+          <div class="list-controls__row">
+            <div class="list-controls__block">
+              <span class="list-controls__label">Кандидат</span>
+              <div class="control-shell control-shell--sort">
+                <select id="timeline-filter" class="control-select" data-mock-timeline-select>
+                  <option value="all">Все кандидаты</option>
+                  <option value="novikov">Новиков</option>
+                  <option value="sidorov">Сидоров</option>
+                  <option value="kozlov">Козлов</option>
+                  <option value="lebedev">Лебедев</option>
+                  <option value="morozov">Морозов</option>
+                  <option value="orlov">Орлов</option>
+                  <option value="fedorov">Фёдоров</option>
+                </select>
               </div>
             </div>
-
-            <ol class="timeline" data-mock-timeline>
-              <li class="timeline__item" data-candidate="sidorov">
-                <div class="timeline__track"><span class="timeline__dot" aria-hidden="true"></span></div>
-                <div class="timeline__content">
-                  <time class="timeline__time" datetime="2026-05-20T16:30">16:30</time>
-                  <div class="timeline__body">
-                    <strong>Статус: интервью</strong>
-                    <span>Сидоров М. — ответ заказчика</span>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline__item timeline__item--highlight" data-candidate="novikov">
-                <div class="timeline__track"><span class="timeline__dot" aria-hidden="true"></span></div>
-                <div class="timeline__content">
-                  <time class="timeline__time" datetime="2026-05-20T14:05">14:05</time>
-                  <div class="timeline__body">
-                    <strong>Отправлено заказчику</strong>
-                    <span>Новиков П. · DOCX v1 скачан</span>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline__item" data-candidate="novikov">
-                <div class="timeline__track"><span class="timeline__dot" aria-hidden="true"></span></div>
-                <div class="timeline__content">
-                  <time class="timeline__time" datetime="2026-05-20T11:20">11:20</time>
-                  <div class="timeline__body">
-                    <strong>DOCX готов</strong>
-                    <span>Новиков П. — адаптация утверждена</span>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline__item" data-candidate="sidorov">
-                <div class="timeline__track"><span class="timeline__dot" aria-hidden="true"></span></div>
-                <div class="timeline__content">
-                  <time class="timeline__time" datetime="2026-05-20T11:15">11:15</time>
-                  <div class="timeline__body">
-                    <strong>На проверке</strong>
-                    <span>Сидоров М. — рекрутер открыл «было → стало»</span>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline__item">
-                <div class="timeline__track"><span class="timeline__dot" aria-hidden="true"></span></div>
-                <div class="timeline__content">
-                  <time class="timeline__time" datetime="2026-05-20T10:43">10:43</time>
-                  <div class="timeline__body">
-                    <strong>AI подобрал 5 кандидатов</strong>
-                    <span>Топ: Сидоров 91%, Новиков 88%</span>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline__item">
-                <div class="timeline__track"><span class="timeline__dot" aria-hidden="true"></span></div>
-                <div class="timeline__content">
-                  <time class="timeline__time" datetime="2026-05-20T10:42">10:42</time>
-                  <div class="timeline__body">
-                    <strong>Вакансия создана</strong>
-                    <span>Импорт DOCX от СберTech</span>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline__item" data-candidate="kozlov">
-                <div class="timeline__track"><span class="timeline__dot" aria-hidden="true"></span></div>
-                <div class="timeline__content">
-                  <time class="timeline__time" datetime="2026-05-12T09:00">12 мая</time>
-                  <div class="timeline__body">
-                    <strong>Отказ</strong>
-                    <span>Козлов Д. · не подошёл стек</span>
-                  </div>
-                </div>
-              </li>
-            </ol>
-          </section>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="reject-modal" aria-hidden="true" role="dialog" aria-labelledby="reject-modal-title">
-    <div class="modal__overlay" data-mock-close></div>
-    <div class="modal__dialog">
-      <div class="modal__head">
-        <h2 id="reject-modal-title">Зафиксировать отказ</h2>
-        <p>Укажите тип и причину — попадёт в историю и KPI вакансии</p>
-      </div>
-      <form class="modal__body" data-mock-reject-form>
-        <div class="field">
-          <label>Тип отказа</label>
-          <div class="radio-group">
-            <label><input type="radio" name="reject-type" value="Заказчик" checked> Заказчик</label>
-            <label><input type="radio" name="reject-type" value="Кандидат"> Кандидат</label>
-            <label><input type="radio" name="reject-type" value="Не подошёл стек"> Не подошёл стек</label>
-            <label><input type="radio" name="reject-type" value="Другое"> Другое</label>
+            <div class="list-controls__block">
+              <div class="control-shell">
+                <label class="filter-toggle">
+                  <input type="checkbox" data-mock-show-rejects>
+                  <span class="filter-toggle__ui" aria-hidden="true"></span>
+                  <span class="filter-toggle__text">Показать отказы</span>
+                </label>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="field">
-          <label for="reject-date">Дата</label>
-          <input type="date" id="reject-date" name="reject-date" value="2026-05-21">
-        </div>
-        <div class="field">
-          <label for="reject-reason">Причина</label>
-          <textarea id="reject-reason" name="reject-reason" rows="3" placeholder="Кратко: почему отказ…"></textarea>
-        </div>
-        <div class="modal__foot">
-          <button type="button" class="btn btn-secondary" data-mock-close>Отмена</button>
-          <button type="submit" class="btn btn-primary">Сохранить</button>
-        </div>
-      </form>
+
+        <section class="vcard-panel vcard-panel--history">
+          <div class="vcard-panel__head">
+            <h2>Лента событий</h2>
+            <p class="vcard-panel__hint" data-mock-timeline-count></p>
+          </div>
+          <ol class="timeline" data-mock-timeline-render></ol>
+        </section>
+      </div>
     </div>
   </div>
 
+  <script src="mock-data.js"></script>
   <script src="mock.js"></script>
 </body>
 </html>

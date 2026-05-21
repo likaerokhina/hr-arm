@@ -4,53 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HR ЛК — прототип</title>
-  <link rel="stylesheet" href="styles.css?v=align12">
+  <link rel="stylesheet" href="styles.css?v=mock2">
 </head>
 <body class="page-index">
   <div class="mock-nav">
     <span class="brand">HR ЛК</span>
-    <span class="tag">Прототип · 4 экрана</span>
+    <span class="tag">Прототип · presale</span>
   </div>
 
   <div class="content-inner">
     <h1>ЛК рекрутера — прототип</h1>
-    <p class="lead">4 экрана = 4 эпика. Интерактивные demo-flows — фильтры, воронка, чеклист, модалы.</p>
+    <p class="lead">Макеты по итогам встречи 21.05. Сценарий, воронка с drawer, банк (AppSheet), богатые mock-данные.</p>
 
+    <h2 style="margin:32px 0 16px;font-size:18px">Основные экраны</h2>
     <div class="preview-grid">
-      <a href="dashboard.html" class="preview-card">
-        <div class="thumb" style="background: linear-gradient(180deg, #eef2ff 0%, #f7f6f4 100%);"></div>
-        <div class="info">
-          <h3>1. Список вакансий</h3>
-          <p>Epic-1 · KPI + карточки заявок</p>
-        </div>
-      </a>
-      <a href="vacancy.html" class="preview-card">
-        <div class="thumb" style="background: linear-gradient(180deg, #ede9fe 0%, #f7f6f4 100%);"></div>
-        <div class="info">
-          <h3>2. Воронка</h3>
-          <p>Epic-2 · подбор AI + стадии</p>
-        </div>
-      </a>
-      <a href="resume.html" class="preview-card">
-        <div class="thumb" style="background: linear-gradient(180deg, #ecfdf5 0%, #f7f6f4 100%);"></div>
-        <div class="info">
-          <h3>3. Было → Стало</h3>
-          <p>Epic-3 · адаптация + DOCX</p>
-        </div>
-      </a>
-      <a href="vacancy-card.html" class="preview-card">
-        <div class="thumb" style="background: linear-gradient(180deg, #fff7ed 0%, #f7f6f4 100%);"></div>
-        <div class="info">
-          <h3>4. История и статусы</h3>
-          <p>Epic-1.3 + Epic-4 · из воронки, кнопка в шапке</p>
-        </div>
-      </a>
+      <a href="dashboard.html" class="preview-card"><div class="info"><h3>Список вакансий</h3><p>10 вакансий · KPI · фильтры</p></div></a>
+      <a href="vacancy.html" class="preview-card"><div class="info"><h3>Воронка</h3><p>5 колонок · drawer · 11 кандидатов</p></div></a>
+      <a href="resume.html" class="preview-card"><div class="info"><h3>Было → Стало</h3><p>Rich diff · AI warning</p></div></a>
+      <a href="vacancy-card.html" class="preview-card"><div class="info"><h3>История</h3><p>15+ событий · фильтр</p></div></a>
+      <a href="resume-bank-calendar.html" class="preview-card"><div class="info"><h3>Банк · календарь</h3><p>AppSheet-референс</p></div></a>
+      <a href="resume-bank.html" class="preview-card"><div class="info"><h3>Банк · список</h3><p>18 специалистов</p></div></a>
     </div>
 
-    <p class="footer-links">
-      <a href="references.md">references.md</a>
-      presale-only · не в git-репо
-    </p>
+    <h2 style="margin:32px 0 16px;font-size:18px">Сценарий (по шагам)</h2>
+    <div class="preview-grid">
+      <a href="vacancy-create-1.html" class="preview-card"><div class="info"><h3>1. Загрузка заявки</h3></div></a>
+      <a href="vacancy-create-2.html" class="preview-card"><div class="info"><h3>2. Профиль AI</h3></div></a>
+      <a href="vacancy-funnel-empty.html" class="preview-card"><div class="info"><h3>3. Воронка пустая</h3></div></a>
+      <a href="vacancy-funnel-loading.html" class="preview-card"><div class="info"><h3>4. AI ищет</h3></div></a>
+      <a href="vacancy.html" class="preview-card"><div class="info"><h3>5. Кандидаты</h3></div></a>
+      <a href="vacancy-drawer-open.html" class="preview-card"><div class="info"><h3>5b. Drawer open</h3><p>для PNG</p></div></a>
+    </div>
+
+    <p class="footer-links"><a href="references.md">references.md</a></p>
   </div>
 </body>
 </html>

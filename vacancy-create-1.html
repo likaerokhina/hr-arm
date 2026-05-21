@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создание вакансии — шаг 1</title>
+  <link rel="stylesheet" href="styles.css?v=mock2">
+</head>
+<body>
+  <div class="mock-nav">
+    <span class="brand">HR ЛК</span>
+    <a href="dashboard.html">Вакансии</a>
+    <span class="tag">Сценарий · шаг 1/2</span>
+    <div class="mock-nav__scenario"><a href="vacancy-create-2.html">Далее →</a></div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark">HR</span>
+        Рекрутер
+      </div>
+      <nav>
+        <a href="dashboard.html" class="active">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Вакансии
+        </a>
+        <a href="resume-bank-calendar.html">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Банк резюме
+        </a>
+        <a href="#">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+          Настройки
+        </a>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="topbar"><div><h1>Новая вакансия</h1><div class="breadcrumb">Шаг 1 — загрузка заявки</div></div></header>
+      <div class="content content--wizard">
+        <div class="wizard">
+          <nav class="wizard__rail" aria-label="Шаги создания вакансии">
+            <div class="wizard__step is-active">
+              <span class="wizard__step-num">1</span>
+              <span class="wizard__step-label">Загрузка</span>
+            </div>
+            <div class="wizard__connector" aria-hidden="true"></div>
+            <div class="wizard__step is-pending">
+              <span class="wizard__step-num">2</span>
+              <span class="wizard__step-label">Профиль и AI</span>
+            </div>
+          </nav>
+          <div class="wizard-panel">
+            <div class="wizard-panel__head">
+              <h2>Текст или документ от заказчика</h2>
+              <p class="wizard-panel__hint">AI разберёт требования и предложит поля для точного подбора из банка.</p>
+            </div>
+            <form class="wizard-panel__body wizard-panel__body--upload" data-mock-wizard-form onsubmit="return false">
+              <div class="field field--grow">
+                <label for="vacancy-text">Текст вакансии</label>
+                <textarea id="vacancy-text" data-mock-vacancy-text placeholder="Вставьте текст заявки от заказчика…">Заявка от заказчика: СберТех
+Проект: платформа обработки платежей (FinTech), контур PCI DSS
+
+Позиция: DevOps Engineer
+Грейд: Senior
+Загрузка: full-time, 8 ч/день
+Формат: удалённо, overlap с МСК не менее 4 ч
+
+Старт: ASAP (готовы принять с 21.05.2026)
+Срок проекта: до 31.12.2026 с возможностью продления
+
+Стек и инфраструктура:
+— Kubernetes (prod-кластеры, 4+ года практики)
+— Terraform, Helm
+— GitLab CI/CD, GitOps-подход
+— Observability: Prometheus, Grafana, Loki
+— Опыт работы в среде PCI DSS обязателен
+
+Задачи:
+— Поддержка и развитие CI/CD для микросервисов
+— Автоматизация деплоя в K8s, hardening окружений
+— Участие в инцидентах и postmortem, on-call по ротации
+— Сопровождение релизов совместно с разработкой и ИБ
+
+Требования к кандидату:
+— Senior, уверенный Linux, сеть, troubleshooting
+— Опыт FinTech / банковских проектов приветствуется
+— Английский B1+ (переписка с вендорами)
+— Готовность к security-review и аудитам
+
+Дедлайн на первые профили: 24.05.2026
+Приоритет: высокий</textarea>
+              </div>
+              <div class="field field--shrink">
+                <div class="upload-or" aria-hidden="true"><span>или</span></div>
+                <div class="drop-zone drop-zone--compact">
+                  <svg class="icon drop-zone__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <span>Перетащите DOCX сюда <span class="drop-zone__mock">(mock)</span></span>
+                </div>
+              </div>
+            </form>
+            <div class="wizard-panel__foot">
+              <div class="wizard-panel__foot-actions">
+                <a href="dashboard.html" class="btn btn-secondary">Отмена</a>
+                <a href="vacancy-create-2.html" class="btn btn-primary" data-mock-wizard-next>Далее — разбор AI</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="mock-data.js"></script>
+  <script src="mock.js"></script>
+</body>
+</html>

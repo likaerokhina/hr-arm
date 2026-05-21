@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Специалист — банк резюме</title>
+  <link rel="stylesheet" href="styles.css?v=mock2">
+</head>
+<body>
+  <div class="mock-nav">
+    <span class="brand">HR ЛК</span>
+    <a href="dashboard.html">Вакансии</a>
+    <a href="resume-bank-calendar.html" class="active">Банк</a>
+    <span class="tag">АРМ presale · этап 2</span>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark">HR</span>
+        Рекрутер
+      </div>
+      <nav>
+        <a href="dashboard.html">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Вакансии
+        </a>
+        <a href="resume-bank-calendar.html" class="active">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Банк резюме
+        </a>
+        <a href="#">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+          Настройки
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main" data-mock-bank-person>
+      <header class="topbar">
+        <div>
+          <div class="breadcrumb breadcrumb--back">
+            <a href="resume-bank.html">← К списку банка</a>
+          </div>
+          <h1 data-mock-bank-person-name>Калюжный Артём</h1>
+          <div class="breadcrumb" data-mock-bank-person-sub>DevOps · DevOps</div>
+        </div>
+        <div class="topbar__actions">
+          <span class="status-pill status-pill--open" data-mock-bank-person-status><span class="status-dot"></span>Свободен</span>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="bank-person-grid">
+          <section class="bank-person-card">
+            <h3>Занятость</h3>
+            <dl class="bank-person-meta">
+              <div>
+                <dt>Загрузка</dt>
+                <dd data-mock-bank-person-load>0%</dd>
+              </div>
+              <div>
+                <dt>Свободен с</dt>
+                <dd data-mock-bank-person-free>сейчас</dd>
+              </div>
+            </dl>
+            <table class="bank-person-weeks" data-mock-bank-person-weeks></table>
+          </section>
+
+          <section class="bank-person-card">
+            <h3>Стек</h3>
+            <p style="margin:0 0 16px;font-size:14px" data-mock-bank-person-stack>K8s, Terraform</p>
+            <h3 style="margin-top:0">Факты и проверки</h3>
+            <ul class="bank-person-facts" data-mock-bank-person-facts></ul>
+          </section>
+
+          <section class="bank-person-card bank-person-card--wide">
+            <h3>История отправок</h3>
+            <div class="send-stats" data-mock-bank-person-send-summary></div>
+            <div class="bank-person-send-table-wrap">
+              <table class="bank-person-send-table">
+                <thead>
+                  <tr>
+                    <th>Дата</th>
+                    <th>Вакансия</th>
+                    <th>Заказчик</th>
+                    <th>Match</th>
+                    <th>Статус</th>
+                    <th>Комментарий</th>
+                  </tr>
+                </thead>
+                <tbody data-mock-bank-person-sends></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="mock-data.js"></script>
+  <script src="mock.js"></script>
+</body>
+</html>

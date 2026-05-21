@@ -1,12 +1,18 @@
-# Screen map — 4 экрана presale
+# Screen map — presale
 
-| HTML | Эпик | Journey (контекст) |
-|------|------|-------------------|
-| `dashboard.html` | Epic 1 | zapros-do-otpravki-cv (KPI, застой) |
-| `vacancy.html` | Epic 2 | ai-ot-zaprosa-do-cv, zapros (воронка, %, блокировки) — **скрин `voronka.png`: viewport 1680px** |
-| `resume.html` | Epic 3 | ai-ot-zaprosa-do-cv (было→стало, DOCX) |
-| `vacancy-card.html` | Epic 4 | zapros (отправки, лента) |
+| HTML | Назначение |
+|------|------------|
+| `dashboard.html` | Список вакансий, KPI, фильтры |
+| `vacancy-create-1.html` | Wizard шаг 1 — загрузка |
+| `vacancy-create-2.html` | Wizard шаг 2 — профиль AI |
+| `vacancy-funnel-empty.html` | Воронка пустая (сценарий) |
+| `vacancy-funnel-loading.html` | AI ищет (сценарий) |
+| `vacancy.html` | Воронка + drawer |
+| `vacancy-drawer-open.html` | Экспорт PNG · drawer открыт |
+| `resume.html` | Было → стало |
+| `vacancy-card.html` | История вакансии |
+| `resume-bank-calendar.html` | Банк · календарь (AppSheet) |
+| `resume-bank.html` | Банк · список |
+| `resume-bank-person.html` | Банк · карточка специалиста |
 
-Детали полей: [kontekst-dlya-interfeisov.md](./kontekst-dlya-interfeisov.md) (копия из `arch/docs/onboarding/outstaffing/`).
-
-Продукт: [obraz-rezultata.md](../../arch/docs/product/obraz-rezultata.md).
+Данные: [`mock-data.js`](../mock-data.js) · логика: [`mock.js`](../mock.js).
