@@ -1,0 +1,5 @@
+# Mockups context
+
+Читать: `context/scope.md` → `../arch/docs/product/obraz-rezultata.md` → epic → `context/kontekst-dlya-interfeisov.md` → `context/journeys/`.
+
+4 HTML = 4 эпика. Sidebar «Банк резюме» — `href="#"`, не реализовывать.

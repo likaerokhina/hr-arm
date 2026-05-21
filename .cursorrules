@@ -1,0 +1,7 @@
+# HR ЛК mockups
+
+- Продукт и эпики: `../arch/docs/product/` (obraz-rezultata, epics 1–4).
+- Локальный контекст: `context/journeys/`, `context/kontekst-dlya-interfeisov.md`, `context/scope.md`, `context/screen-map.md`.
+- Scope: этап 2 АРМ only; этап 1 КП — без UI; этап 3 (скамья, ATS, агенты) — не в макеты.
+- Не создавать новые HTML-страницы без эпика в arch.
+- Язык UI — русский.

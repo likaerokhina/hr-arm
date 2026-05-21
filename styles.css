@@ -572,6 +572,11 @@ a { color: var(--primary); text-decoration: none; }
   color: var(--text-muted);
 }
 
+.vacancy-card__meta .meta-reject {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
 .vacancy-card--highlight {
   border-color: #fed7aa;
   background: linear-gradient(90deg, #fffbeb 0%, #ffffff 55%);
@@ -627,6 +632,11 @@ a { color: var(--primary); text-decoration: none; }
 
 .candidate-card__corner-tag--reject {
   background: #dc2626;
+  color: #fff;
+}
+
+.candidate-card__corner-tag--sent-before {
+  background: #64748b;
   color: #fff;
 }
 
@@ -1045,6 +1055,21 @@ a.candidate-card {
 .candidate-card .score--muted {
   color: var(--text-muted);
   font-weight: 500;
+}
+
+.candidate-card__reasons {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.35;
+  max-height: 2.7em;
+  overflow: hidden;
+}
+
+.candidate-card__reasons li::before {
+  content: "· ";
 }
 
 /* Detail panel */

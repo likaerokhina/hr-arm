@@ -42,7 +42,9 @@
 
 ## Экраны (presale)
 
-Скрины — в [образе результата](../obraz-rezultata.md#экраны). Ниже — паттерны по экранам.
+Скрины — в [образе результата](../arch/docs/product/obraz-rezultata.md#экраны-лк). Ниже — паттерны по экранам.
+
+Контекст scope: [context/scope.md](context/scope.md) · [arch mvp-scope-map](../arch/docs/onboarding/outstaffing/mvp-scope-map.md).
 
 **1. Список вакансий**
 - KPI-карточки: иконка + colored left border, 3 метрики в ряд
