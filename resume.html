@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Адаптация резюме — HR ЛК</title>
-  <link rel="stylesheet" href="styles.css?v=align14">
+  <link rel="stylesheet" href="styles.css?v=mock1">
 </head>
 <body>
   <div class="mock-nav">
@@ -23,11 +23,11 @@
         Рекрутер
       </div>
       <nav>
-        <a href="dashboard.html" class="active">
+        <a href="dashboard.html" class="sidebar-link--muted">
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
           Вакансии
         </a>
-        <a href="#">
+        <a href="#" title="Загружается отдельно — предусловие MVP">
           <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
           Банк резюме
         </a>
@@ -42,7 +42,11 @@
       <header class="topbar">
         <div>
           <h1>Сидоров М. — DevOps Engineer</h1>
-          <div class="breadcrumb">СберTech / Адаптация резюме</div>
+          <div class="topbar-meta">
+            <span class="breadcrumb">СберTech / Адаптация резюме</span>
+            <span class="topbar-chip">91% совпадения</span>
+            <a href="vacancy.html" class="mini-activity__link">← К воронке</a>
+          </div>
         </div>
       </header>
 
@@ -54,8 +58,12 @@
               AI адаптировал
             </span>
             <span style="font-size:13px;color:var(--text-muted)">Совпадение: <strong style="color:var(--ai)">91%</strong></span>
-            <span class="resume-version">Версия 1</span>
+            <div class="version-tabs" data-mock-version-tabs>
+              <button type="button" class="version-tabs__item active" data-mock-version-tab="v1">v1</button>
+              <button type="button" class="version-tabs__item" data-mock-version-tab="v2">v2</button>
+            </div>
             <span class="docx-hint docx-hint--meta">Корпоративный шаблон DOCX</span>
+            <span class="version-hint" data-mock-version-hint">v1 — первичная адаптация AI</span>
           </div>
           <a href="vacancy.html" class="btn btn-secondary btn-sm">
             <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -79,12 +87,12 @@
                 <p><strong>Стек:</strong> Linux, Bash, Python, Ansible</p>
               </div>
             </div>
-            <div class="diff-col diff-col--after">
+            <div class="diff-col diff-col--after" data-mock-diff-after>
               <h3>
                 <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg>
                 Стало (под вакансию)
               </h3>
-              <div class="diff-box after">
+              <div class="diff-box after" data-mock-diff-version="v1">
                 <p><strong>Опыт работы</strong></p>
                 <p>Senior DevOps Engineer, IT-компания, 2020–2025</p>
                 <p>— Kubernetes, Docker, GitLab CI<br>
@@ -93,26 +101,59 @@
                 — Облако: Yandex Cloud, <span class="highlight">Terraform</span></p>
                 <p><strong>Стек:</strong> Linux, Bash, Python, Ansible, <span class="highlight">Helm</span></p>
               </div>
+              <div class="diff-box after hidden" data-mock-diff-version="v2">
+                <p><strong>Опыт работы</strong></p>
+                <p>Senior DevOps Engineer, IT-компания, 2020–2025</p>
+                <p>— <span class="highlight">FinTech: платёжные шлюзы, PCI DSS, high-load</span><br>
+                — Kubernetes, Docker, GitLab CI, <span class="highlight">Helm charts</span><br>
+                — Мониторинг: Prometheus, Grafana, alerting<br>
+                — Облако: Yandex Cloud, Terraform, IaC</p>
+                <p><strong>Стек:</strong> Linux, Bash, Python, Ansible, Helm, <span class="highlight">ArgoCD</span></p>
+              </div>
+              <textarea class="diff-edit" data-mock-diff-textarea>Senior DevOps Engineer, IT-компания, 2020–2025
+— Kubernetes, Docker, GitLab CI
+— FinTech: платёжные шлюзы, PCI DSS
+— Мониторинг: Prometheus, Grafana
+— Облако: Yandex Cloud, Terraform
+Стек: Linux, Bash, Python, Ansible, Helm</textarea>
             </div>
           </div>
         </div>
       </div>
 
-            <div class="sticky-actions">
-        <p class="footer-note">После проверки — отметьте отправку заказчику.</p>
-        <div class="actions">
-          <a href="vacancy-card.html" class="btn btn-primary">
+      <div class="sticky-actions sticky-actions--with-checklist">
+        <div class="checklist-bar" data-mock-checklist>
+          <label class="checklist-item" data-mock-check-item data-required="true">
+            <input type="checkbox"> Факты проверены
+          </label>
+          <label class="checklist-item" data-mock-check-item data-required="true">
+            <input type="checkbox"> Не отправлялся заказчику
+          </label>
+          <label class="checklist-item checklist-item--optional" data-mock-check-item>
+            <input type="checkbox"> Английский уточнён
+          </label>
+          <label class="checklist-item" data-mock-check-item data-required="true">
+            <input type="checkbox"> Готовность сотрудника
+          </label>
+        </div>
+        <div class="sticky-actions__row">
+          <p class="footer-note">После проверки — отметьте отправку заказчику.</p>
+          <div class="actions">
+          <a href="vacancy-card.html" class="btn btn-primary btn--disabled" data-mock-send-btn aria-disabled="true">
             <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2z"/></svg>
             Отправлено заказчику →
           </a>
-          <a href="#" class="btn btn-secondary">
+          <a href="#" class="btn btn-secondary" data-mock-docx>
             <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Скачать DOCX
           </a>
-          <a href="#" class="btn btn-secondary">Править</a>
+          <button type="button" class="btn btn-secondary" data-mock-edit-resume">Править</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script src="mock.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 | HTML | Эпик | Journey (контекст) |
 |------|------|-------------------|
 | `dashboard.html` | Epic 1 | zapros-do-otpravki-cv (KPI, застой) |
-| `vacancy.html` | Epic 2 | ai-ot-zaprosa-do-cv, zapros (воронка, %, блокировки) |
+| `vacancy.html` | Epic 2 | ai-ot-zaprosa-do-cv, zapros (воронка, %, блокировки) — **скрин `voronka.png`: viewport 1680px** |
 | `resume.html` | Epic 3 | ai-ot-zaprosa-do-cv (было→стало, DOCX) |
 | `vacancy-card.html` | Epic 4 | zapros (отправки, лента) |
 

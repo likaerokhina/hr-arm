@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Воронка — DevOps Engineer</title>
-  <link rel="stylesheet" href="styles.css?v=align20">
+  <link rel="stylesheet" href="styles.css?v=mock1">
 </head>
 <body>
   <div class="mock-nav">
@@ -23,11 +23,11 @@
         Рекрутер
       </div>
       <nav>
-        <a href="dashboard.html" class="active">
+        <a href="dashboard.html" class="sidebar-link--muted">
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
           Вакансии
         </a>
-        <a href="#">
+        <a href="#" title="Загружается отдельно — предусловие MVP">
           <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
           Банк резюме
         </a>
@@ -63,6 +63,13 @@
             </div>
           </details>
           <div class="breadcrumb">FinTech, Kubernetes, 5+ лет</div>
+          <div class="brief-strip">
+            <span class="brief-strip__item">Senior</span>
+            <span class="brief-strip__item">Full-time</span>
+            <span class="brief-strip__item">CET+4</span>
+            <span class="brief-strip__item">FinTech</span>
+            <span class="brief-strip__item">K8s, Terraform</span>
+          </div>
         </div>
         <div class="topbar__actions">
           <a href="resume.html" class="btn btn-primary">
@@ -80,14 +87,15 @@
       <div class="content content--flush">
         <div class="three-pane three-pane--funnel">
           <div class="pane pane--pipeline">
-            <div class="pipeline">
+            <div class="pipeline" data-mock-pipeline>
               <div class="pipeline-col pipeline-col--ai">
                 <div class="pipeline-col__head">
                   <h3>Подобрано AI</h3>
                   <span class="count-badge">3</span>
                 </div>
                 <div class="pipeline-col__body">
-                  <div class="candidate-card">
+                  <div class="candidate-card" data-candidate="ivanov" tabindex="0" role="button">
+                    <span class="candidate-card__corner-tag candidate-card__corner-tag--warning">На другой позиции</span>
                     <div class="candidate-card__row">
                       <div class="avatar avatar--blue">АИ</div>
                       <div>
@@ -101,7 +109,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="candidate-card candidate-card--blocked">
+                  <div class="candidate-card candidate-card--blocked" data-candidate="petrov" tabindex="0" role="button">
                     <span class="candidate-card__corner-tag candidate-card__corner-tag--busy">Занят до 01.06</span>
                     <div class="candidate-card__row">
                       <div class="avatar avatar--violet">КП</div>
@@ -111,7 +119,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="candidate-card candidate-card--blocked">
+                  <div class="candidate-card candidate-card--blocked" data-candidate="smirnov" tabindex="0" role="button">
                     <span class="candidate-card__corner-tag candidate-card__corner-tag--sent-before">Уже отправляли · 12.05</span>
                     <div class="candidate-card__row">
                       <div class="avatar avatar--amber">СЕ</div>
@@ -129,7 +137,8 @@
                   <span class="count-badge">1</span>
                 </div>
                 <div class="pipeline-col__body">
-                  <div class="candidate-card selected">
+                  <div class="candidate-card selected" data-candidate="sidorov" tabindex="0" role="button">
+                    <span class="candidate-card__corner-tag candidate-card__corner-tag--warning">FinTech (2× отказ)</span>
                     <div class="candidate-card__row">
                       <div class="avatar avatar--teal">МС</div>
                       <div>
@@ -147,25 +156,32 @@
                   <span class="count-badge">0</span>
                 </div>
                 <div class="pipeline-col__body pipeline-col__body--empty">
-                  <span class="pipeline-empty">Нет кандидатов</span>
+                  <div class="pipeline-empty-state">
+                    <p>Нет кандидатов</p>
+                    <p>Появится после утверждения DOCX на экране резюме</p>
+                  </div>
                 </div>
               </div>
               <div class="pipeline-col pipeline-col--sent">
                 <div class="pipeline-col__head">
-                  <h3>Отправлено</h3>
+                  <div class="pipeline-col__head-left">
+                    <h3>Отправлено</h3>
+                    <a href="vacancy-card.html#novikov" class="pipeline-col__link">Статусы →</a>
+                  </div>
                   <span class="count-badge">2</span>
                 </div>
                 <div class="pipeline-col__body">
-                  <a href="vacancy-card.html" class="candidate-card">
+                  <div class="candidate-card" data-candidate="novikov" tabindex="0" role="button">
                     <div class="candidate-card__row">
                       <div class="avatar avatar--rose">ПН</div>
                       <div>
                         <div class="name">Новиков П.Е.</div>
-                        <div class="score score--muted">Ждём ответ 4 дн.</div>
+                        <div class="score score--waiting">Ждём ответ 4 дн.</div>
+                        <a href="vacancy-card.html#novikov" class="mini-activity__link">Статусы →</a>
                       </div>
                     </div>
-                  </a>
-                  <a href="vacancy-card.html" class="candidate-card candidate-card--reject">
+                  </div>
+                  <div class="candidate-card candidate-card--reject" data-candidate="kozlov" tabindex="0" role="button">
                     <span class="candidate-card__corner-tag candidate-card__corner-tag--reject">Отказ</span>
                     <div class="candidate-card__row">
                       <div class="avatar avatar--amber">ДК</div>
@@ -174,7 +190,7 @@
                         <div class="candidate-stage-time">12 мая · не&nbsp;подошёл стек</div>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -182,55 +198,15 @@
 
           <div class="pane">
             <div class="pane-header">Кандидат</div>
-            <div class="detail-panel">
-              <div class="detail-header">
-                <div class="avatar avatar--teal avatar--lg">МС</div>
-                <div>
-                  <h2>Сидоров Михаил</h2>
-                  <div class="role">DevOps / SRE · 6 лет</div>
-                </div>
-              </div>
-
-              <div class="score-block">
-                <span class="badge badge-ai">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg>
-                  AI-подбор
-                </span>
-                <div class="score-block__top">
-                  <div class="score-ring" style="--score: 91"><span>91%</span></div>
-                  <ul>
-                    <li>Kubernetes — 4 года</li>
-                    <li>FinTech в&nbsp;стеке</li>
-                    <li>CI/CD, Terraform</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="mini-activity">
-                <div class="mini-activity__head">
-                  <h3>Последние шаги</h3>
-                  <a href="vacancy-card.html" class="mini-activity__link">Вся история →</a>
-                </div>
-                <ul class="mini-activity__list">
-                  <li><time>10:43</time><span>AI подобрал кандидата</span></li>
-                  <li><time>11:15</time><span>На проверке — открыли «было → стало»</span></li>
-                  <li><time>11:20</time><span>DOCX готов</span></li>
-                </ul>
-              </div>
-
-                            <p class="detail-note">
-                Резюме адаптировано под вакансию.
-              </p>
-
-              <div class="actions">
-                <a href="resume.html" class="btn btn-primary">Проверить резюме</a>
-                <a href="#" class="btn btn-secondary">Скачать DOCX</a>
-              </div>
+            <div class="detail-panel" data-mock-detail-panel>
+              <!-- filled by mock.js -->
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script src="mock.js"></script>
 </body>
 </html>
