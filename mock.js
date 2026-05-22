@@ -632,6 +632,124 @@
     var regenBtn = qs('[data-mock-ai-regenerate]');
     var btnLabel = qs('[data-resume-btn-label]');
 
+    function makeFold(box, title, meta, contentNodes, open, variantClass) {
+      if (!box || !contentNodes || !contentNodes.length) return;
+      var anchor = contentNodes[0];
+
+      var details = document.createElement('details');
+      details.className = 'resume-fold' + (variantClass ? ' ' + variantClass : '');
+      if (open) details.open = true;
+
+      var summary = document.createElement('summary');
+
+      var titleEl = document.createElement('span');
+      titleEl.className = 'resume-fold__title';
+      titleEl.textContent = title;
+      summary.appendChild(titleEl);
+
+      if (meta) {
+        var metaEl = document.createElement('span');
+        metaEl.className = 'resume-fold__meta';
+        metaEl.textContent = meta;
+        summary.appendChild(metaEl);
+      }
+
+      var body = document.createElement('div');
+      body.className = 'resume-fold__body';
+
+      details.appendChild(summary);
+      details.appendChild(body);
+      if (anchor && anchor.parentNode === box) {
+        box.insertBefore(details, anchor);
+      } else {
+        box.appendChild(details);
+      }
+
+      contentNodes.forEach(function (node) {
+        body.appendChild(node);
+      });
+    }
+
+    function enhanceResumeBox(box) {
+      if (!box || box.getAttribute('data-resume-enhanced') === 'true') return;
+
+      var jobs = qsa('.cv-job', box);
+      jobs.forEach(function (job, index) {
+        if (job.parentElement && job.parentElement.classList.contains('cv-job-accordion__body')) return;
+
+        var employer = job.querySelector('p');
+        var paragraphs = qsa('p', job);
+        var role = paragraphs.length > 2 ? paragraphs[2] : null;
+
+        var details = document.createElement('details');
+        details.className = 'cv-job-accordion';
+        if (index < 2) details.open = true;
+
+        var summary = document.createElement('summary');
+
+        var company = document.createElement('span');
+        company.className = 'cv-job-accordion__company';
+        company.innerHTML = employer ? employer.innerHTML : 'Опыт';
+        summary.appendChild(company);
+
+        if (role) {
+          var roleEl = document.createElement('span');
+          roleEl.className = 'cv-job-accordion__role';
+          roleEl.innerHTML = role.innerHTML;
+          summary.appendChild(roleEl);
+        }
+
+        var body = document.createElement('div');
+        body.className = 'cv-job-accordion__body';
+
+        job.parentNode.insertBefore(details, job);
+        body.appendChild(job);
+        details.appendChild(summary);
+        details.appendChild(body);
+      });
+
+      var headings = qsa('h4', box);
+      headings.forEach(function (heading) {
+        var title = heading.textContent.trim().toLowerCase();
+        if (title !== 'технические навыки' && title !== 'дополнительная информация') return;
+
+        var contentNodes = [];
+        var next = heading.nextElementSibling;
+        while (next && next.tagName !== 'H4') {
+          var current = next;
+          next = next.nextElementSibling;
+          contentNodes.push(current);
+        }
+
+        if (!contentNodes.length) return;
+
+        heading.remove();
+
+        if (title === 'технические навыки') {
+          var skillsText = contentNodes.map(function (node) {
+            return node.textContent || '';
+          }).join(', ');
+          var skillsCount = skillsText
+            .split(',')
+            .map(function (part) { return part.trim(); })
+            .filter(Boolean).length;
+          makeFold(box, 'Технические навыки', skillsCount ? skillsCount + ' навыков' : '', contentNodes, false, 'resume-fold--skills');
+          return;
+        }
+
+        makeFold(box, 'Дополнительная информация', 'Свернуто по умолчанию', contentNodes, false, 'resume-fold--meta');
+      });
+
+      box.setAttribute('data-resume-enhanced', 'true');
+    }
+
+    function renderResumeState(html, target) {
+      if (!target) return;
+      target.removeAttribute('data-resume-enhanced');
+      target.innerHTML = html;
+      enhanceResumeBox(target);
+    }
+
     if (resumeData && beforeEl && afterEl) {
       if (resumeData.meta) {
         var titleEl = qs('[data-resume-title]');
@@ -643,8 +761,8 @@
         if (chipEl) chipEl.textContent = resumeData.meta.chip;
         if (docxHintEl) docxHintEl.textContent = resumeData.meta.docxHint;
       }
-      beforeEl.innerHTML = resumeData.beforeHtml;
-      afterEl.innerHTML = resumeData.afterHtml;
+      renderResumeState(resumeData.beforeHtml, beforeEl);
+      renderResumeState(resumeData.afterHtml, afterEl);
     }
 
     function setLoading(isLoading) {
@@ -658,9 +776,18 @@
       }
       if (commentEl) commentEl.disabled = isLoading;
       if (btnLabel) {
-        btnLabel.textContent = isLoading ? 'Генерация…' : 'Сгенерировать резюме';
+        btnLabel.textContent = isLoading ? 'Генерация…' : 'Перегенерировать';
       }
     }
+
+    qsa('[data-mock-ai-chip]').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        if (!commentEl) return;
+        var text = chip.getAttribute('data-mock-ai-chip') || chip.textContent;
+        commentEl.value = text;
+        commentEl.focus();
+      });
+    });
 
     if (regenBtn && afterEl && resumeData) {
       regenBtn.addEventListener('click', function () {
@@ -676,7 +803,7 @@
         setTimeout(function () {
           afterEl.style.opacity = '0';
           setTimeout(function () {
-            afterEl.innerHTML = resumeData.afterRegeneratedHtml;
+            renderResumeState(resumeData.afterRegeneratedHtml, afterEl);
             afterEl.style.opacity = '';
             setLoading(false);
             if (commentEl) commentEl.value = '';
@@ -699,6 +826,45 @@
         showToast('Адаптированный DOCX скачан');
       });
     });
+  }
+
+  function initResumeLayout() {
+    var stage = qs('.resume-stage');
+    var panel = qs('[data-resume-ai-panel]');
+    var footerSlot = qs('[data-ai-footer-slot]');
+    var diffWrap = stage ? qs('.diff-wrap', stage) : null;
+    if (!stage || !panel || !footerSlot) return;
+
+    function applyLayout(layout) {
+      document.body.setAttribute('data-resume-layout', layout);
+
+      qsa('[data-resume-layout-btn]').forEach(function (btn) {
+        btn.classList.toggle('is-active', btn.getAttribute('data-resume-layout-btn') === layout);
+      });
+
+      if (layout === 'footer-all') {
+        footerSlot.appendChild(panel);
+        return;
+      }
+
+      if (panel.parentElement === footerSlot) {
+        stage.appendChild(panel);
+      }
+
+      if (layout === 'above-diff' && diffWrap) {
+        stage.insertBefore(panel, diffWrap);
+      } else if (diffWrap) {
+        diffWrap.insertAdjacentElement('afterend', panel);
+      }
+    }
+
+    qsa('[data-resume-layout-btn]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLayout(btn.getAttribute('data-resume-layout-btn') || 'under-diff');
+      });
+    });
+
+    applyLayout('under-diff');
   }
 
   function initTimelineFilter(timeline) {
@@ -1130,6 +1296,7 @@
     if (!qs('[data-mock-vacancy-list-render]')) initVacancyFilters();
     initWizardForm();
     initResumeComment();
+    initResumeLayout();
     initModals();
 
     if (document.body.classList.contains('drawer--open')) {

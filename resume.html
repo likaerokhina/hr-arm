@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Адаптация резюме — HR ЛК</title>
-  <link rel="stylesheet" href="styles.css?v=mock3">
+  <link rel="stylesheet" href="styles.css?v=mock4">
 </head>
 <body>
   <div class="mock-nav">
@@ -15,6 +15,14 @@
     <a href="vacancy-card.html">История</a>
     <a href="resume-bank-calendar.html">Банк</a>
     <span class="tag">АРМ presale · этап 2</span>
+    <div class="mock-nav__scenario mock-nav__scenario--layout" aria-label="Варианты размещения AI-поля">
+      <span class="mock-nav__scenario-label">AI-поле:</span>
+      <button type="button" class="mock-nav__layout-btn is-active" data-resume-layout-btn="under-diff">Под diff</button>
+      <button type="button" class="mock-nav__layout-btn" data-resume-layout-btn="above-diff">Над diff</button>
+      <button type="button" class="mock-nav__layout-btn" data-resume-layout-btn="under-stalo">Под «Стало»</button>
+      <button type="button" class="mock-nav__layout-btn" data-resume-layout-btn="sticky-ai">Sticky</button>
+      <button type="button" class="mock-nav__layout-btn" data-resume-layout-btn="footer-all">В footer</button>
+    </div>
   </div>
 
   <div class="layout">
@@ -73,40 +81,61 @@
           <span class="diff-legend__item diff-legend__item--mod">Изменено</span>
         </div>
 
-        <div class="diff-wrap">
-          <div class="diff-grid">
-            <div class="diff-col">
-              <h3>Было (из банка)</h3>
-              <div class="diff-box" id="resume-before"></div>
-            </div>
-            <div class="diff-col diff-col--after">
-              <h3>Стало (под вакансию)</h3>
-              <div class="diff-box after" id="resume-after-box">
-                <div class="diff-box__loader" id="resume-loader" aria-live="polite" aria-busy="false">
-                  <div class="diff-box__loader-spinner"></div>
-                  <span>AI генерирует резюме…</span>
-                </div>
-                <div class="diff-box__body" id="resume-after"></div>
+        <div class="resume-stage">
+          <div class="diff-wrap">
+            <div class="diff-grid">
+              <div class="diff-col">
+                <h3>Было (из банка)</h3>
+                <div class="diff-box" id="resume-before"></div>
               </div>
+              <div class="diff-col diff-col--after">
+                <h3>Стало (под вакансию)</h3>
+                <div class="diff-box after" id="resume-after-box">
+                  <div class="diff-box__loader" id="resume-loader" aria-live="polite" aria-busy="false">
+                    <div class="diff-box__loader-spinner"></div>
+                    <span>AI генерирует резюме…</span>
+                  </div>
+                  <div class="diff-box__body" id="resume-after"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-ai-panel" data-resume-ai-panel>
+            <div class="resume-ai-panel__head">
+              <span class="resume-ai-panel__title">Уточнить адаптацию</span>
+              <span class="resume-ai-panel__hint">Комментарий применится к колонке «Стало»</span>
+            </div>
+            <div class="resume-ai-chips" role="group" aria-label="Быстрые правки">
+              <button type="button" class="resume-ai-chip" data-mock-ai-chip="Усилить FinTech-опыт и убрать нерелевантные проекты">Усилить FinTech</button>
+              <button type="button" class="resume-ai-chip" data-mock-ai-chip="Сократить блок навыков, оставить только ключевые для вакансии">Сократить навыки</button>
+              <button type="button" class="resume-ai-chip" data-mock-ai-chip="Убрать лишние детали и сделать формулировки более деловыми">Сделать короче</button>
+            </div>
+            <div class="resume-ai-bar">
+              <textarea
+                id="resume-comment"
+                data-resume-comment
+                placeholder="Комментарий по тексту: что поправить, убрать или усилить…"
+                rows="3"
+              ></textarea>
+              <button type="button" class="btn btn-primary resume-ai-bar__submit" data-mock-ai-regenerate>
+                <svg class="icon icon-sm resume-ai-bar__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                  <path d="M3 3v5h5"/>
+                  <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                  <path d="M16 16h5v5"/>
+                </svg>
+                <span data-resume-btn-label>Перегенерировать</span>
+              </button>
             </div>
           </div>
         </div>
       </div>
 
       <div class="sticky-actions sticky-actions--resume">
-        <div class="sticky-actions__row" style="flex-wrap:wrap;gap:16px">
-          <div class="resume-comment-bar">
-            <textarea
-              id="resume-comment"
-              data-resume-comment
-              placeholder="Комментарий по тексту: что поправить, убрать или усилить…"
-              rows="2"
-            ></textarea>
-            <button type="button" class="btn btn-secondary" data-mock-ai-regenerate>
-              <span data-resume-btn-label>Сгенерировать резюме</span>
-            </button>
-          </div>
-          <div class="actions" style="margin-left:auto">
+        <div class="sticky-actions__row sticky-actions__row--resume">
+          <div class="sticky-actions__ai-slot" data-ai-footer-slot></div>
+          <div class="actions">
             <button type="button" class="btn btn-secondary" data-mock-docx-resume>Скачать адаптированный DOCX</button>
             <button type="button" class="btn btn-primary" data-mock-mark-ready-resume>Отметить готовность →</button>
             <a href="vacancy-card.html" class="btn btn-accent">Отправить заказчику →</a>
